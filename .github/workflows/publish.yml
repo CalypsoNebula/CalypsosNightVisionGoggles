@@ -83,7 +83,6 @@ jobs:
 
           files: |
             build/libs/*-forge-*.jar
-            build/libs/*-sources.jar
 
           version: ${{ github.ref_name }}
 
