@@ -1,7 +1,13 @@
 {
-  "item.calypsos_nightvision_goggles.nightvision_goggles": "Nightvision Goggles",
-  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode": "Mode: %s",
-  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.auto": "Enable when low light level",
-  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.on": "Enabled",
-  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.off": "Disabled"
+  "item.calypsos_nightvision_goggles.nightvision_goggles": "Night Vision Goggles",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.description": "§7Provides %1$s§7 when worn, requires %2$s to recharge",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.mode": "§7[%1$s§7|%2$s§7|%3$s§7] §8- Press §7[%4$s§7] to switch mode",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.mode.auto": "Auto",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.mode.on": "On",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.mode.off": "Off",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.0": "§7+In inventory, right-click the goggles with the refill item on top to load it",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.1": "§7+Can be refilled with: %s %s %s",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.2": "§7+Auto mode: only activates when it's dark enough",
+  "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.3": "§7+Consumes 1 durability per second when on, never breaks completely",
+  "tooltip.calypsos_nightvision_goggles.expand": "§8Hold §7[Shift] §8to view more information "
 }
