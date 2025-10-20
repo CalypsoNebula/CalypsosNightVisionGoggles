@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2025-10-20
+### :recycle: Refactors
+- [`2444387`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/2444387563e8247b76a69b6134659c56a782c95c) - rename to Calypso's Night Vision Goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :wrench: Chores
+- [`e490407`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/e4904078ac3bcb1cac683c0ccc0cb820091e3676) - rename resources namespace *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`f4a6c3f`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/f4a6c3f9c88f0675388d99b9a91692828d1985d4) - add missing slots *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.1.0] - 2025-09-13
 ### :sparkles: New Features
 - [`fef2ea8`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/fef2ea856887a351870501cbc082ca133a7825ef) - add some adapters and item *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -30,3 +39,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [`2755a12`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/2755a12af7754d20c5a0edd0d2427cd63093ed71) - **nightvision_goggles**: add night vision mixin for 1.21 *(commit by [@SettingDust](https://github.com/SettingDust))*
 
 [0.1.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.0.0...0.1.0
+[0.1.1]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.0...0.1.1
