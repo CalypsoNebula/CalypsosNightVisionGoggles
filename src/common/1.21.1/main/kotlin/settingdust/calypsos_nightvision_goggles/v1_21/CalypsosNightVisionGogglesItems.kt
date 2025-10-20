@@ -10,7 +10,7 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.Nightvi
 import settingdust.calypsos_nightvision_goggles.util.AccessoryRenderer
 import settingdust.calypsos_nightvision_goggles.v1_21.item.nightvision_goggles.NightvisionGogglesItem
 
-class CalypsosAfflatusItems : CalypsosNightVisionGogglesItems {
+class CalypsosNightVisionGogglesItems : CalypsosNightVisionGogglesItems {
     override fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         register(CalypsosNightVisionGogglesKeys.NIGHTVISION_GOGGLES, NightvisionGogglesItem().apply {
             creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)

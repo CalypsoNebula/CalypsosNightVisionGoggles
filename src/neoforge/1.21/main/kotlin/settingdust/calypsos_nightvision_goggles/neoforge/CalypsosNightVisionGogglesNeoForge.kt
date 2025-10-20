@@ -22,7 +22,7 @@ import settingdust.calypsos_nightvision_goggles.v1_21.CalypsosNightVisionGoggles
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 
 @Mod(CalypsosNightVisionGoggles.ID)
-object CalypsosAfflatusNeoForge {
+object CalypsosNightVisionGogglesNeoForge {
     init {
         requireNotNull(CalypsosNightVisionGoggles)
         Entrypoint.construct()
