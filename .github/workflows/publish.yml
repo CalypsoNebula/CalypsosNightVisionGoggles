@@ -35,7 +35,7 @@ jobs:
           changelog: ${{ steps.changelog.outputs.changes }}
           # Only include this section if you wish to publish
           # your assets on Modrinth.
-          modrinth-id: calypsos-afflatus
+          modrinth-id: 4lSvir29
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # Only include this section if you wish to publish
