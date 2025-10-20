@@ -1,0 +1,46 @@
+package settingdust.calypsos_nightvision_goggles.forge
+
+import net.minecraft.client.KeyMapping
+import net.minecraft.core.registries.Registries
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent
+import net.minecraftforge.client.settings.KeyConflictContext
+import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+import net.minecraftforge.registries.RegisterEvent
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeyBindings
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
+import settingdust.calypsos_nightvision_goggles.adapter.Entrypoint
+import thedarkcolour.kotlinforforge.forge.MOD_BUS
+
+@Mod(CalypsosNightVisionGoggles.ID)
+object CalypsosNightVisionGogglesForge {
+    init {
+        requireNotNull(CalypsosNightVisionGoggles)
+        Entrypoint.construct()
+        MOD_BUS.apply {
+            addListener<FMLCommonSetupEvent> {
+                Entrypoint.init()
+                requireNotNull(CalypsosNightVisionGogglesNetworking)
+            }
+            addListener<FMLClientSetupEvent> { Entrypoint.clientInit() }
+            addListener<RegisterEvent> { event ->
+                when (event.registryKey) {
+                    Registries.ITEM -> CalypsosNightVisionGogglesItems.registerItems { id, value ->
+                        event.register(Registries.ITEM, id) { value }
+                    }
+
+                    Registries.SOUND_EVENT -> CalypsosNightVisionGogglesSoundEvents.registerSoundEvents { id, value ->
+                        event.register(Registries.SOUND_EVENT, id) { value(id) }
+                    }
+                }
+            }
+            addListener<RegisterKeyMappingsEvent> { event ->
+                CalypsosNightVisionGogglesKeyBindings.registerKeyBindings { event.register(it) }
+                (CalypsosNightVisionGogglesKeyBindings.ACCESSORY_MODE as KeyMapping).keyConflictContext = KeyConflictContext.GUI
+            }
+        }
+    }
+}

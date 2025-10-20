@@ -244,4 +244,4 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
-rootProject.name = "CalypsosAfflatus"
+rootProject.name = "CalypsosNightVisionGoggles"

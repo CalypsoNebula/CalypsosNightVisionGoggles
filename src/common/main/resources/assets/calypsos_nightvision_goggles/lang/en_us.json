@@ -1,0 +1,7 @@
+{
+  "item.calypsos_nightvision_goggles.nightvision_goggles": "Nightvision Goggles",
+  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode": "Mode: %s",
+  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.auto": "Enable when low light level",
+  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.on": "Enabled",
+  "tooltip.calypsos_nightvision_goggles.nightvision_goggles.mode.off": "Disabled"
+}

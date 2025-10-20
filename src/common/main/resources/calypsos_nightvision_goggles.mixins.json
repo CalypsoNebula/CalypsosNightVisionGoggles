@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "settingdust.calypsos_nightvision_goggles.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "calypsos_nightvision_goggles.refmap.json",
+  "mixins": [
+    "AbstractContainerScreenAccessor"
+  ],
+  "client": [
+    "ModelPartAccessor"
+  ]
+}

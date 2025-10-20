@@ -34,7 +34,7 @@ val archive_name: String by rootProject.properties
 val id: String by rootProject.properties
 val source: String by rootProject.properties
 
-group = "settingdust.calypsos_afflatus"
+group = "settingdust.calypsos_nightvision_goggles"
 
 val gitVersion: Closure<String> by extra
 version = gitVersion()
@@ -167,6 +167,7 @@ cloche {
             mixins.from("src/common/1.21.1/main/resources/$id.1_21.mixins.json")
         },
     )
+
     run fabric@{
         val fabricCommon = common("fabric:common") {
             mixins.from(file("src/fabric/common/main/resources/$id.fabric.mixins.json"))
