@@ -2,6 +2,10 @@ package settingdust.calypsos_nightvision_goggles
 
 object CalypsosNightVisionGogglesKeys {
     val NIGHTVISION_GOGGLES = CalypsosNightVisionGoggles.id("nightvision_goggles")
+    val THE_WATCHER_GOGGLES = CalypsosNightVisionGoggles.id("the_watcher_goggles")
+    val PURIFIER_GOGGLES = CalypsosNightVisionGoggles.id("purifier_goggles")
+    val NIGHT_OWL_GOGGLES = CalypsosNightVisionGoggles.id("night_owl_goggles")
+
     val MODE = CalypsosNightVisionGoggles.id("mode")
 
     val UI_MODE_SWITCH = CalypsosNightVisionGoggles.id("ui.mode_switch")

@@ -1,0 +1,5 @@
+package settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant
+
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
+
+object RegularVariant : NightvisionGogglesVariant

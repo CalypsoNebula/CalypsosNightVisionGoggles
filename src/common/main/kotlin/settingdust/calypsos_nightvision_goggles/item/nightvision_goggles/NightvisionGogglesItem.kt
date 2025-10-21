@@ -7,28 +7,41 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.client.resources.sounds.SimpleSoundInstance
 import net.minecraft.network.chat.Component
-import net.minecraft.world.effect.MobEffectInstance
+import net.minecraft.server.level.ServerPlayer
+import net.minecraft.world.InteractionHand
+import net.minecraft.world.InteractionResultHolder
+import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EquipmentSlot
+import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.ClickAction
+import net.minecraft.world.item.Equipable
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
+import net.minecraft.world.level.Level
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
-import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeyBindings
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.mixin.AbstractContainerScreenAccessor
+import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
-object NightvisionGogglesItem {
-    val properties = Item.Properties().stacksTo(1).durability(1800 + 1)
+abstract class NightvisionGogglesItem(private val variant: NightvisionGogglesVariant) :
+    Item(Properties().stacksTo(1).durability(1800 + 1)), Equipable {
+    companion object {
+        const val duration = 2 * 20
+        const val amplifier = 0
+        const val ambient = false
+        const val visible = false
+        const val shouIcon = true
+    }
 
-    const val duration = 2 * 20
-    const val amplifier = 0
-    const val ambient = false
-    const val visible = false
-    const val shouIcon = true
+    interface Factory {
+        companion object : Factory by ServiceLoaderUtil.findService()
+
+        operator fun invoke(variant: NightvisionGogglesVariant): NightvisionGogglesItem
+    }
 
     private var expanded = false
 
@@ -45,7 +58,7 @@ object NightvisionGogglesItem {
             if (hoveredSlot == null
                 || hoveredSlot is CreativeModeInventoryScreen.CustomCreativeSlot
                 || !hoveredSlot.hasItem()
-                || hoveredSlot.item.item !== CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES
+                || hoveredSlot.item.item !== this
             ) return@onKeyPressedInScreen
             NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot)
             Minecraft.getInstance().soundManager.play(
@@ -55,13 +68,13 @@ object NightvisionGogglesItem {
 
         LoaderAdapter.onLivingEntityTick { entity ->
             val stack = entity.getItemBySlot(EquipmentSlot.HEAD)
-            if (!stack.`is`(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES)) return@onLivingEntityTick
+            if (!stack.`is`(this)) return@onLivingEntityTick
             NightvisionGogglesAccessory.tick(stack, entity)
         }
 
         LoaderAdapter.onItemStackedOnOther { player, carriedItem, stackedOnItem, slot, clickAction ->
             if (clickAction !== ClickAction.SECONDARY) return@onItemStackedOnOther false
-            if (!carriedItem.`is`(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES)) return@onItemStackedOnOther false
+            if (!carriedItem.`is`(this)) return@onItemStackedOnOther false
             val value = DURABILITY_PROVIDERS[stackedOnItem.item] ?: return@onItemStackedOnOther false
             carriedItem.damageValue -= value
             stackedOnItem.shrink(1)
@@ -69,18 +82,10 @@ object NightvisionGogglesItem {
         }
     }
 
-    @Suppress("SimplifyBooleanWithConstants")
-    fun MobEffectInstance?.isFromAccessory() =
-        this != null
-                && amplifier == NightvisionGogglesItem.amplifier
-                && endsWithin(NightvisionGogglesItem.duration)
-                && isVisible == NightvisionGogglesItem.visible
-                && isAmbient == NightvisionGogglesItem.ambient
-                && showIcon() == NightvisionGogglesItem.shouIcon
-
     fun MutableList<Component>.appendTooltip(stack: ItemStack) {
         if (stack.mode == null) stack.mode = NightvisionGogglesModeHandler.Mode.AUTO
         val spiderEye = Component.translatable("item.minecraft.spider_eye").withStyle { it.withColor(0xC85A54) }
+        addAll(variant.description)
         add(
             Component.translatable(
                 "item.${CalypsosNightVisionGoggles.ID}.nightvision_goggles.tooltip.description",
@@ -139,5 +144,23 @@ object NightvisionGogglesItem {
             add(Component.translatable("item.${CalypsosNightVisionGoggles.ID}.nightvision_goggles.tooltip.expand.2"))
             add(Component.translatable("item.${CalypsosNightVisionGoggles.ID}.nightvision_goggles.tooltip.expand.3"))
         }
+    }
+
+    override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+        val stack = player.getItemInHand(hand)
+        stack.mode =
+            NightvisionGogglesModeHandler.Mode.entries[
+                stack.mode?.ordinal?.let { (it + 1) % NightvisionGogglesModeHandler.Mode.entries.size } ?: 0
+            ]
+        return InteractionResultHolder.success(stack)
+    }
+
+    override fun getEquipmentSlot() = EquipmentSlot.HEAD
+
+    override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
+        if (entity !is ServerPlayer) return
+        val inventory = entity.inventory
+        if (!(slotId >= inventory.items.size && slotId < inventory.items.size + inventory.armor.size)) return
+        NightvisionGogglesAccessory.tick(stack, entity)
     }
 }
