@@ -336,6 +336,31 @@
 			}
 		}
 	],
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [90, 0, 0],
+            "translation": [0, 2, 1.5]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [90, 0, 0],
+            "translation": [0, 2, 1.5]
+        },
+        "firstperson_righthand": {
+            "rotation": [25, 0, 0],
+            "translation": [0, 0, 2]
+        },
+        "firstperson_lefthand": {
+            "rotation": [25, 0, 0],
+            "translation": [0, 0, 2]
+        },
+        "gui": {
+            "rotation": [-155, -32.5, -180],
+            "translation": [-0.3, 0, 0]
+        },
+        "head": {
+            "scale": [1.6, 1.6, 1.6]
+        }
+    },
 	"groups": [
 		{
 			"name": "左手带子",

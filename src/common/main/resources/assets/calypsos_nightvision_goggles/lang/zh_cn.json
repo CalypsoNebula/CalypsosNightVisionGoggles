@@ -1,8 +1,11 @@
 {
     "item.calypsos_nightvision_goggles.nightvision_goggles": "夜视护目镜",
-    "item.calypsos_nightvision_goggles.the_watcher_goggles.tooltip.description": "§o§6诡异的目光使被注视的变弱",
+    "item.calypsos_nightvision_goggles.the_watcher_goggles": "注视者夜视仪",
+    "item.calypsos_nightvision_goggles.the_watcher_goggles.tooltip.description": "§6§o诡异的目光使被注视的变弱",
+    "item.calypsos_nightvision_goggles.purifier_goggles": "净化者夜视仪",
     "item.calypsos_nightvision_goggles.purifier_goggles.tooltip.description": "§o消耗充能自动移除负面效果",
-    "item.calypsos_nightvision_goggles.night_owl_goggles.tooltip.description": "§o§2昏暗的光线使你兴奋",
+    "item.calypsos_nightvision_goggles.night_owl_goggles": "夜猫子夜视仪",
+    "item.calypsos_nightvision_goggles.night_owl_goggles.tooltip.description": "§2§o昏暗的光线使你兴奋",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.description": "§7佩戴后提供%1$s§7，需装填%2$s",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.mode": "§7[%1$s§7|%2$s§7|%3$s§7] §8- 按§7[%4$s§7]切换模式",
     "item.calypsos_nightvision_goggles.nightvision_goggles.mode.auto": "自动",
