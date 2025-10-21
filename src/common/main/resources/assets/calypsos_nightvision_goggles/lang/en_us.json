@@ -1,5 +1,8 @@
 {
     "item.calypsos_nightvision_goggles.nightvision_goggles": "Night Vision Goggles",
+    "item.calypsos_nightvision_goggles.the_watcher_goggles.tooltip.description": "§o§6Eerie gaze weakens foes.",
+    "item.calypsos_nightvision_goggles.purifier_goggles.tooltip.description": " §oUses charge to cleanse debuffs.",
+    "item.calypsos_nightvision_goggles.night_owl_goggles.tooltip.description": "§o§2The dim light excites you.",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.description.variant.watcher": "§o§6Eerie gaze weakens foes.",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.description.variant.purifier": "§oUses charge to cleanse debuffs.",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.description.variant.night_owl": "§o§2The dim light excites you.",

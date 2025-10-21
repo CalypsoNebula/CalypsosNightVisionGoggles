@@ -6,6 +6,6 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.Nightvi
 
 object NightOwlVariant : NightvisionGogglesVariant {
     override val description = listOf(
-        Component.translatable("item.${CalypsosNightVisionGoggles.ID}.tooltip.description.variant.night_owl")
+        Component.translatable("item.${CalypsosNightVisionGoggles.ID}.night_owl_goggles.tooltip.description")
     )
 }
