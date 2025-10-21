@@ -9,11 +9,11 @@ import settingdust.calypsos_nightvision_goggles.v1_21.util.CalypsosNightVisionGo
 import settingdust.calypsos_nightvision_goggles.v1_21.util.CalypsosNightVisionGogglesItemsStreamCodecs
 
 object CalypsosNightVisionGogglesDataComponents {
-    val MODE by lazy { BuiltInRegistries.DATA_COMPONENT_TYPE.get(CalypsosNightVisionGogglesKeys.MODE) as DataComponentType<NightvisionGogglesModeHandler.Mode> }
+    val MODE by lazy { BuiltInRegistries.DATA_COMPONENT_TYPE.get(CalypsosNightVisionGogglesKeys.Mode) as DataComponentType<NightvisionGogglesModeHandler.Mode> }
 
     fun registerDataComponents(register: (ResourceLocation, DataComponentType<*>) -> Unit) {
         register(
-            CalypsosNightVisionGogglesKeys.MODE,
+            CalypsosNightVisionGogglesKeys.Mode,
             DataComponentType.builder<NightvisionGogglesModeHandler.Mode>()
                 .networkSynchronized(CalypsosNightVisionGogglesItemsStreamCodecs.NIGHTVISION_GOGGLES_MODE)
                 .persistent(CalypsosNightVisionGogglesItemsCodecs.NIGHTVISION_GOGGLES_MODE)

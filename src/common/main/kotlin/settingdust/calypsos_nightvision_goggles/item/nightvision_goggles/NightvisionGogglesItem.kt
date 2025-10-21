@@ -29,14 +29,6 @@ import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
 abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
     Item(Properties().stacksTo(1).durability(1800 + 1)), Equipable {
-    companion object {
-        const val duration = 2 * 20
-        const val amplifier = 0
-        const val ambient = false
-        const val visible = false
-        const val shouIcon = true
-    }
-
     interface Factory {
         companion object : Factory by ServiceLoaderUtil.findService()
 
@@ -72,7 +64,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
             variant.tick(stack, entity)
         }
 
-        LoaderAdapter.onItemStackedOnOther { player, carriedItem, stackedOnItem, slot, clickAction ->
+        LoaderAdapter.onItemStackedOnOther { _, carriedItem, stackedOnItem, slot, clickAction ->
             if (clickAction !== ClickAction.SECONDARY) return@onItemStackedOnOther false
             if (!carriedItem.`is`(this)) return@onItemStackedOnOther false
             val value = DURABILITY_PROVIDERS[stackedOnItem.item] ?: return@onItemStackedOnOther false
@@ -162,5 +154,9 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
         val inventory = entity.inventory
         if (!(slotId >= inventory.items.size && slotId < inventory.items.size + inventory.armor.size)) return
         variant.tick(stack, entity)
+    }
+
+    override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
+        stack.damageValue = stack.maxDamage
     }
 }

@@ -2,7 +2,9 @@ package settingdust.calypsos_nightvision_goggles
 
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Item
+import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter.Companion.creativeTab
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.NightOwlVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.PurifierVariant
@@ -18,9 +20,17 @@ object CalypsosNightVisionGogglesItems {
 
     fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         val factory = ServiceLoaderUtil.findService<NightvisionGogglesItem.Factory>()
-        register(CalypsosNightVisionGogglesKeys.NightvisionGoggles, factory(RegularVariant))
-        register(CalypsosNightVisionGogglesKeys.TheWatcherGoggles, factory(WatcherVariant))
-        register(CalypsosNightVisionGogglesKeys.PurifierGoggles, factory(PurifierVariant))
-        register(CalypsosNightVisionGogglesKeys.NightOwlGoggles, factory(NightOwlVariant))
+        register(CalypsosNightVisionGogglesKeys.NightvisionGoggles, factory(RegularVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.TheWatcherGoggles, factory(WatcherVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.PurifierGoggles, factory(PurifierVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.NightOwlGoggles, factory(NightOwlVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
     }
 }
