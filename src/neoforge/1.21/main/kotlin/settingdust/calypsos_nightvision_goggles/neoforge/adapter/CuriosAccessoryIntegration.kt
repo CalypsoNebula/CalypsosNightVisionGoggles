@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
-import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessory
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
 import settingdust.calypsos_nightvision_goggles.util.AccessoryRenderer
 import top.theillusivec4.curios.api.CuriosApi
 import top.theillusivec4.curios.api.SlotContext
@@ -47,14 +47,14 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
 
     override val modId = CuriosApi.MODID
     override fun init() {
-        CuriosApi.registerCurio(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES, object : ICurioItem {
+        CuriosApi.registerCurio(CalypsosNightVisionGogglesItems.NightvisionGoggles, object : ICurioItem {
             override fun curioTick(slotContext: SlotContext, stack: ItemStack) {
-                NightvisionGogglesAccessory.tick(stack, slotContext.entity)
+                NightvisionGogglesAccessoryRenderer.tick(stack, slotContext.entity)
             }
         })
 
         if (LoaderAdapter.isClient) {
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES) {
+            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NightvisionGoggles) {
                 Renderer
             }
         }

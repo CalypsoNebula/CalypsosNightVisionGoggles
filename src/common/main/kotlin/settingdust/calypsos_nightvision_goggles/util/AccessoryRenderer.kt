@@ -1,12 +1,10 @@
 package settingdust.calypsos_nightvision_goggles.util
 
 import com.mojang.blaze3d.vertex.PoseStack
-import it.unimi.dsi.fastutil.objects.Reference2ReferenceOpenHashMap
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.util.Mth
 import net.minecraft.world.entity.LivingEntity
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec3
 import settingdust.calypsos_nightvision_goggles.mixin.ModelPartAccessor
@@ -14,23 +12,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 interface AccessoryRenderer {
-    companion object : AccessoryRenderer {
-        val RENDERERS: MutableMap<Item, AccessoryRenderer> = Reference2ReferenceOpenHashMap()
-
-        fun registerRenderer(item: Item, renderer: AccessoryRenderer) {
-            RENDERERS[item] = renderer
-        }
-
-        override fun render(
-            stack: ItemStack,
-            owner: LivingEntity,
-            poseStack: PoseStack,
-            buffer: MultiBufferSource,
-            light: Int
-        ) {
-            RENDERERS[stack.item]?.render(stack, owner, poseStack, buffer, light)
-        }
-
+    companion object {
         fun PoseStack.transformToModelPart(
             part: ModelPart,
             xPercent: Double? = null,

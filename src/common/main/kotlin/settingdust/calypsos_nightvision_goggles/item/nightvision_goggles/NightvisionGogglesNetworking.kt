@@ -16,7 +16,7 @@ interface NightvisionGogglesNetworking {
             data: ContainerType.Data
         ) {
             val stack = (containerType as ContainerType<ContainerType.Data>).getItem(slotIndex, sender, data)
-            if (stack.item === CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES) {
+            if (stack.item === CalypsosNightVisionGogglesItems.NightvisionGoggles) {
                 stack.mode =
                     NightvisionGogglesModeHandler.Mode.entries[
                         stack.mode?.ordinal?.let { (it + 1) % NightvisionGogglesModeHandler.Mode.entries.size } ?: 0

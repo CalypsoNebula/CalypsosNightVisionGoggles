@@ -11,16 +11,16 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
 object CalypsosNightVisionGogglesItems {
-    val NIGHTVISION_GOGGLES by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NIGHTVISION_GOGGLES) }
-    val THE_WATCHER_GOGGLES by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.THE_WATCHER_GOGGLES) }
-    val PURIFIER_GOGGLES by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.PURIFIER_GOGGLES) }
-    val NIGHT_OWL_GOGGLES by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NIGHT_OWL_GOGGLES) }
+    val NightvisionGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NightvisionGoggles) as NightvisionGogglesItem }
+    val TheWatcherGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.TheWatcherGoggles) as NightvisionGogglesItem }
+    val PurifierGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.PurifierGoggles) as NightvisionGogglesItem }
+    val NightOwlGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NightOwlGoggles) as NightvisionGogglesItem }
 
     fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         val factory = ServiceLoaderUtil.findService<NightvisionGogglesItem.Factory>()
-        register(CalypsosNightVisionGogglesKeys.NIGHTVISION_GOGGLES, factory(RegularVariant))
-        register(CalypsosNightVisionGogglesKeys.THE_WATCHER_GOGGLES, factory(WatcherVariant))
-        register(CalypsosNightVisionGogglesKeys.PURIFIER_GOGGLES, factory(PurifierVariant))
-        register(CalypsosNightVisionGogglesKeys.NIGHT_OWL_GOGGLES, factory(NightOwlVariant))
+        register(CalypsosNightVisionGogglesKeys.NightvisionGoggles, factory(RegularVariant))
+        register(CalypsosNightVisionGogglesKeys.TheWatcherGoggles, factory(WatcherVariant))
+        register(CalypsosNightVisionGogglesKeys.PurifierGoggles, factory(PurifierVariant))
+        register(CalypsosNightVisionGogglesKeys.NightOwlGoggles, factory(NightOwlVariant))
     }
 }

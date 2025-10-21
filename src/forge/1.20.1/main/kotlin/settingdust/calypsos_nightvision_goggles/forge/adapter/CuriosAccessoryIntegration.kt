@@ -10,7 +10,8 @@ import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
-import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessory
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import top.theillusivec4.curios.api.CuriosApi
 import top.theillusivec4.curios.api.SlotContext
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry
@@ -34,7 +35,7 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
             netHeadYaw: Float,
             headPitch: Float
         ) {
-            settingdust.calypsos_nightvision_goggles.util.AccessoryRenderer.render(
+            NightvisionGogglesAccessoryRenderer.render(
                 stack,
                 slotContext.entity(),
                 poseStack,
@@ -44,16 +45,43 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
         }
     }
 
+    class NightVisionGogglesCurio(val item: NightvisionGogglesItem) : ICurioItem {
+        override fun curioTick(slotContext: SlotContext, stack: ItemStack) {
+            item.variant.tick(stack, slotContext.entity())
+        }
+    }
+
     override val modId = CuriosApi.MODID
+
     override fun init() {
-        CuriosApi.registerCurio(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES, object : ICurioItem {
-            override fun curioTick(slotContext: SlotContext, stack: ItemStack) {
-                NightvisionGogglesAccessory.tick(stack, slotContext.entity)
-            }
-        })
+        CuriosApi.registerCurio(
+            CalypsosNightVisionGogglesItems.NightvisionGoggles,
+            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.NightvisionGoggles)
+        )
+        CuriosApi.registerCurio(
+            CalypsosNightVisionGogglesItems.PurifierGoggles,
+            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.PurifierGoggles)
+        )
+        CuriosApi.registerCurio(
+            CalypsosNightVisionGogglesItems.TheWatcherGoggles,
+            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
+        )
+        CuriosApi.registerCurio(
+            CalypsosNightVisionGogglesItems.NightOwlGoggles,
+            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.NightOwlGoggles)
+        )
 
         if (LoaderAdapter.isClient) {
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES) {
+            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NightvisionGoggles) {
+                Renderer
+            }
+            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.PurifierGoggles) {
+                Renderer
+            }
+            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.TheWatcherGoggles) {
+                Renderer
+            }
+            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NightOwlGoggles) {
                 Renderer
             }
         }

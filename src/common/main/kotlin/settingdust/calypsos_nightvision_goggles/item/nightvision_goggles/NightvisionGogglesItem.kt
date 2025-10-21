@@ -27,7 +27,7 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.Nightvi
 import settingdust.calypsos_nightvision_goggles.mixin.AbstractContainerScreenAccessor
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
-abstract class NightvisionGogglesItem(private val variant: NightvisionGogglesVariant) :
+abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
     Item(Properties().stacksTo(1).durability(1800 + 1)), Equipable {
     companion object {
         const val duration = 2 * 20
@@ -69,7 +69,7 @@ abstract class NightvisionGogglesItem(private val variant: NightvisionGogglesVar
         LoaderAdapter.onLivingEntityTick { entity ->
             val stack = entity.getItemBySlot(EquipmentSlot.HEAD)
             if (!stack.`is`(this)) return@onLivingEntityTick
-            NightvisionGogglesAccessory.tick(stack, entity)
+            variant.tick(stack, entity)
         }
 
         LoaderAdapter.onItemStackedOnOther { player, carriedItem, stackedOnItem, slot, clickAction ->
@@ -161,6 +161,6 @@ abstract class NightvisionGogglesItem(private val variant: NightvisionGogglesVar
         if (entity !is ServerPlayer) return
         val inventory = entity.inventory
         if (!(slotId >= inventory.items.size && slotId < inventory.items.size + inventory.armor.size)) return
-        NightvisionGogglesAccessory.tick(stack, entity)
+        variant.tick(stack, entity)
     }
 }

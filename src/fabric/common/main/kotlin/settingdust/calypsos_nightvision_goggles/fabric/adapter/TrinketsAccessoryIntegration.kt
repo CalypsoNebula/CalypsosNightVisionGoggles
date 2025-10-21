@@ -14,7 +14,8 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
-import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessory
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import kotlin.jvm.optionals.getOrNull
 
 class TrinketsAccessoryIntegration : AccessoryIntegration {
@@ -34,21 +35,40 @@ class TrinketsAccessoryIntegration : AccessoryIntegration {
             headYaw: Float,
             headPitch: Float
         ) {
-            NightvisionGogglesAccessory.render(stack, entity, matrices, vertexConsumers, light)
+            NightvisionGogglesAccessoryRenderer.render(stack, entity, matrices, vertexConsumers, light)
         }
+    }
 
+    class NightvisionGogglesTrinket(val item: NightvisionGogglesItem) : Trinket {
+        override fun tick(stack: ItemStack, slot: SlotReference, entity: LivingEntity) {
+            item.variant.tick(stack, entity)
+        }
     }
 
     override val modId = TrinketsMain.MOD_ID
 
     override fun init() {
-        TrinketsApi.registerTrinket(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES, object : Trinket {
-            override fun tick(stack: ItemStack, slot: SlotReference, owner: LivingEntity) {
-                NightvisionGogglesAccessory.tick(stack, owner)
-            }
-        })
+        TrinketsApi.registerTrinket(
+            CalypsosNightVisionGogglesItems.NightvisionGoggles,
+            NightvisionGogglesTrinket(CalypsosNightVisionGogglesItems.NightvisionGoggles)
+        )
+        TrinketsApi.registerTrinket(
+            CalypsosNightVisionGogglesItems.TheWatcherGoggles,
+            NightvisionGogglesTrinket(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
+        )
+        TrinketsApi.registerTrinket(
+            CalypsosNightVisionGogglesItems.PurifierGoggles,
+            NightvisionGogglesTrinket(CalypsosNightVisionGogglesItems.PurifierGoggles)
+        )
+        TrinketsApi.registerTrinket(
+            CalypsosNightVisionGogglesItems.NightOwlGoggles,
+            NightvisionGogglesTrinket(CalypsosNightVisionGogglesItems.NightOwlGoggles)
+        )
 
-        TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NIGHTVISION_GOGGLES, Renderer)
+        TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightvisionGoggles, Renderer)
+        TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.TheWatcherGoggles, Renderer)
+        TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.PurifierGoggles, Renderer)
+        TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles, Renderer)
     }
 
     override fun getEquipped(entity: LivingEntity, item: Item): ItemStack? =
