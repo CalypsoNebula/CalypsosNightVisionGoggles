@@ -1,18 +1,29 @@
 {
-  "ui.mode_switch": {
-    "sounds": [
-      "calypsos_nightvision_goggles:ui/mode_switch0",
-      "calypsos_nightvision_goggles:ui/mode_switch1"
-    ]
-  },
-  "ui.expand": {
-    "sounds": [
-      "calypsos_nightvision_goggles:ui/expand"
-    ]
-  },
-  "ui.collapse": {
-    "sounds": [
-      "calypsos_nightvision_goggles:ui/collapse"
-    ]
-  }
+    "ui.mode_switch": {
+        "sounds": [
+            "calypsos_nightvision_goggles:ui/mode_switch0",
+            "calypsos_nightvision_goggles:ui/mode_switch1"
+        ]
+    },
+    "ui.expand": {
+        "sounds": [
+            "calypsos_nightvision_goggles:ui/expand"
+        ]
+    },
+    "ui.collapse": {
+        "sounds": [
+            "calypsos_nightvision_goggles:ui/collapse"
+        ]
+    },
+    "accessory.purify": {
+        "sounds": [
+            "calypsos_nightvision_goggles:accessory/purify"
+        ]
+    },
+    "accessory.watching": {
+        "sounds": [
+            "calypsos_nightvision_goggles:accessory/watching_0",
+            "calypsos_nightvision_goggles:accessory/watching_1"
+        ]
+    }
 }

@@ -6,9 +6,15 @@ object CalypsosNightVisionGogglesKeys {
     val PurifierGoggles = CalypsosNightVisionGoggles.id("purifier_goggles")
     val NightOwlGoggles = CalypsosNightVisionGoggles.id("night_owl_goggles")
 
+    val ItsWatching = CalypsosNightVisionGoggles.id("its_watching")
+    val ShadowHopper = CalypsosNightVisionGoggles.id("shadow_hopper")
+
     val Mode = CalypsosNightVisionGoggles.id("mode")
 
     val UiModeSwitch = CalypsosNightVisionGoggles.id("ui.mode_switch")
     val UiExpand = CalypsosNightVisionGoggles.id("ui.expand")
     val UiCollapse= CalypsosNightVisionGoggles.id("ui.collapse")
+
+    val AccessoryPurify = CalypsosNightVisionGoggles.id("accessory.purify")
+    val AccessoryWatching = CalypsosNightVisionGoggles.id("accessory.watching")
 }

@@ -54,7 +54,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
             ) return@onKeyPressedInScreen
             NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot)
             Minecraft.getInstance().soundManager.play(
-                SimpleSoundInstance.forUI(CalypsosNightVisionGogglesSoundEvents.UI_MODE_SWITCH, 1f, 1f)
+                SimpleSoundInstance.forUI(CalypsosNightVisionGogglesSoundEvents.UiModeSwitch, 1f, 1f)
             )
         }
 
@@ -105,7 +105,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
             if (expanded) {
                 Minecraft.getInstance().soundManager.play(
                     SimpleSoundInstance.forUI(
-                        CalypsosNightVisionGogglesSoundEvents.UI_COLLAPSE,
+                        CalypsosNightVisionGogglesSoundEvents.UiCollapse,
                         1f,
                         1f
                     )
@@ -117,7 +117,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
             if (LoaderAdapter.isClient && !expanded) {
                 Minecraft.getInstance().soundManager.play(
                     SimpleSoundInstance.forUI(
-                        CalypsosNightVisionGogglesSoundEvents.UI_EXPAND,
+                        CalypsosNightVisionGogglesSoundEvents.UiExpand,
                         1f,
                         1f
                     )

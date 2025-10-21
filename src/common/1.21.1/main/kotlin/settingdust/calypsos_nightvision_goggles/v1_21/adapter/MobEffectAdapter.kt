@@ -8,6 +8,14 @@ import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 
 class MobEffectAdapter : MobEffectAdapter {
     override val Nightvision = MobEffects.NIGHT_VISION
+    override val Weakness = MobEffects.WEAKNESS
+    override val Slowness = MobEffects.MOVEMENT_SLOWDOWN
+    override val Speed = MobEffects.MOVEMENT_SPEED
+    override val JumpBoost = MobEffects.JUMP
+
+
+    override val MobEffectInstance.effectHolder: Holder<MobEffect>
+        get() = effect
     override val MobEffectInstance.effectReference: MobEffect
         get() = effect.value()
 

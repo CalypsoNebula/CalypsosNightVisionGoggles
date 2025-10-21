@@ -13,6 +13,7 @@ import net.neoforged.neoforge.registries.RegisterEvent
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeyBindings
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.Entrypoint
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesNetworking
@@ -43,6 +44,10 @@ object CalypsosNightVisionGogglesNeoForge {
 
                     Registries.DATA_COMPONENT_TYPE -> CalypsosNightVisionGogglesDataComponents.registerDataComponents { id, value ->
                         event.register(Registries.DATA_COMPONENT_TYPE, id) { value }
+                    }
+
+                    Registries.MOB_EFFECT -> CalypsosNightVisionGogglesMobEffects.registerMobEffects { id, value ->
+                        event.register(Registries.MOB_EFFECT, id) { value }
                     }
                 }
             }

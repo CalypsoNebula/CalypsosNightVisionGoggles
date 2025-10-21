@@ -1,7 +1,6 @@
 package settingdust.calypsos_nightvision_goggles.item.nightvision_goggles
 
 import net.minecraft.network.chat.Component
-import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemStack
@@ -26,7 +25,6 @@ interface NightvisionGogglesVariant {
         get() = emptyList()
 
     fun tick(stack: ItemStack, owner: LivingEntity)  {
-        val player = owner as? ServerPlayer ?: return
         if (stack.mode == null) stack.mode = NightvisionGogglesModeHandler.Mode.AUTO
         if (stack.damageValue >= stack.maxDamage - 1 || !stack.mode!!.isEnabled(stack, owner)) {
             return
@@ -41,7 +39,7 @@ interface NightvisionGogglesVariant {
                 NightvisionPredicate.showIcon!!
             )
         )
-        stack.hurtNoBreak(player, 1)
+        stack.hurtNoBreak(owner, 1)
     }
 
     fun MobEffectInstance?.isFromAccessory(): Boolean = NightvisionPredicate.test(this)

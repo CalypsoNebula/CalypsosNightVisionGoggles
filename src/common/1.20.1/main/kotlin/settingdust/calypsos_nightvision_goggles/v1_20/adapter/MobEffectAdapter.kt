@@ -17,6 +17,38 @@ class MobEffectAdapter : MobEffectAdapter {
         )
     )
 
+    override val Weakness = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+        ResourceKey.create(
+            Registries.MOB_EFFECT,
+            ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "weakness")
+        )
+    )
+
+    override val Slowness = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+        ResourceKey.create(
+            Registries.MOB_EFFECT,
+            ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "slowness")
+        )
+    )
+
+    override val Speed = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+        ResourceKey.create(
+            Registries.MOB_EFFECT,
+            ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "speed")
+        )
+    )
+
+    override val JumpBoost = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+        ResourceKey.create(
+            Registries.MOB_EFFECT,
+            ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "jump_boost")
+        )
+    )
+
+    override val MobEffectInstance.effectHolder: Holder<MobEffect>
+        get() = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+            BuiltInRegistries.MOB_EFFECT.getResourceKey(effect).orElseThrow()
+        )
     override val MobEffectInstance.effectReference: MobEffect
         get() = effect
 
