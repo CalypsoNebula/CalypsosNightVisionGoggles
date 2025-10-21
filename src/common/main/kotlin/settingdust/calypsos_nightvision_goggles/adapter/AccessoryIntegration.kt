@@ -1,5 +1,6 @@
 package settingdust.calypsos_nightvision_goggles.adapter
 
+import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
@@ -22,15 +23,15 @@ interface AccessoryIntegration {
             }
         }
 
-        override fun getEquipped(entity: LivingEntity, item: Item): ItemStack? {
+        override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? {
             for (slot in EquipmentSlot.entries) {
                 val stack = entity.getItemBySlot(slot)
-                if (stack.`is`(item)) {
+                if (stack.itemHolder in items) {
                     return stack
                 }
             }
             for (adapter in services) {
-                val equipped = adapter.getEquipped(entity, item)
+                val equipped = adapter.getEquipped(entity, items)
                 if (equipped != null) return equipped
             }
             return null
@@ -41,5 +42,5 @@ interface AccessoryIntegration {
 
     fun init()
 
-    fun getEquipped(entity: LivingEntity, item: Item): ItemStack?
+    fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack?
 }

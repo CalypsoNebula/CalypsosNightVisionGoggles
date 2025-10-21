@@ -2,6 +2,7 @@ package settingdust.calypsos_nightvision_goggles.v1_20.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +23,7 @@ public class GameRendererMixin {
         var effect = entity.getEffect(MobEffects.NIGHT_VISION);
         var equipped = AccessoryIntegration.Companion.getEquipped(
             entity,
-            CalypsosNightVisionGogglesItems.INSTANCE.getNightvisionGoggles()
+            BuiltInRegistries.ITEM.getOrCreateTag(CalypsosNightVisionGogglesItems.Tags.Goggles)
         );
         if (equipped == null
             || !RegularVariant.INSTANCE.isFromAccessory(effect)

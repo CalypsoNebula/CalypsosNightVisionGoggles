@@ -9,6 +9,7 @@ import io.wispforest.accessories.api.client.AccessoryRenderer
 import io.wispforest.accessories.api.slot.SlotReference
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.renderer.MultiBufferSource
+import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
@@ -74,6 +75,6 @@ class AccessoriesAccessoryIntegration : AccessoryIntegration {
         AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles) { Renderer }
     }
 
-    override fun getEquipped(entity: LivingEntity, item: Item) =
-        AccessoriesCapability.get(entity)?.getFirstEquipped(item)?.stack()
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+        AccessoriesCapability.get(entity)?.getFirstEquipped { it.itemHolder in items }?.stack()
 }

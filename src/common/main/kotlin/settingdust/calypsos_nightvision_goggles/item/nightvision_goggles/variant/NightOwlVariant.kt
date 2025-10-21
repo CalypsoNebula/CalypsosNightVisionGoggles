@@ -4,21 +4,25 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
 import settingdust.calypsos_nightvision_goggles.util.MobEffectPredicate
+import software.bernie.geckolib.model.DefaultedItemGeoModel
 
 object NightOwlVariant : NightvisionGogglesVariant {
     val ShadowHopperPredicate = MobEffectPredicate(
         CalypsosNightVisionGogglesMobEffects.ShadowHopper,
-        duration = 5,
+        duration = 2 * 20,
         amplifier = 0,
         ambient = false,
         visible = false,
         showIcon = true
     )
+    override val model = DefaultedItemGeoModel<NightvisionGogglesItem>(CalypsosNightVisionGogglesKeys.NightOwlGoggles)
 
     override val description = listOf(
         Component.translatable("item.${CalypsosNightVisionGoggles.ID}.night_owl_goggles.tooltip.description")

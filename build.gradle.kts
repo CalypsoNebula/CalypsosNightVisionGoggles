@@ -6,7 +6,10 @@ import earth.terrarium.cloche.api.attributes.CompilationAttributes
 import earth.terrarium.cloche.api.attributes.TargetAttributes
 import earth.terrarium.cloche.api.metadata.FabricMetadata
 import earth.terrarium.cloche.api.metadata.ModMetadata
-import earth.terrarium.cloche.api.target.*
+import earth.terrarium.cloche.api.target.FabricTarget
+import earth.terrarium.cloche.api.target.ForgeLikeTarget
+import earth.terrarium.cloche.api.target.MinecraftTarget
+import earth.terrarium.cloche.api.target.NeoforgeTarget
 import earth.terrarium.cloche.tasks.GenerateFabricModJson
 import groovy.lang.Closure
 import net.msrandom.minecraftcodev.core.utils.lowerCamelCaseGradleName
@@ -66,6 +69,13 @@ repositories {
     maven("https://maven.terraformersmc.com/") {
         content {
             includeGroup("dev.emi")
+        }
+    }
+
+    maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/") {
+        content {
+            includeGroupAndSubgroups("software.bernie")
+            includeGroup("com.eliotlash.mclib")
         }
     }
 
@@ -144,6 +154,11 @@ cloche {
                 start = "1.20.1"
             }
         }
+
+        dependency {
+            modId = "geckolib"
+            required = true
+        }
     }
 
     mappings {
@@ -195,6 +210,9 @@ cloche {
 
                 modImplementation(catalog.cardinal.components.get1().get20().get1().base)
                 modImplementation(catalog.cardinal.components.get1().get20().get1().entity)
+
+                modImplementation(catalog.geckolib.get1().get20().get1().fabric)
+                implementation(catalog.mclib)
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
@@ -235,6 +253,8 @@ cloche {
 
                 modImplementation(catalog.cardinal.components.get1().get21().get1().base)
                 modImplementation(catalog.cardinal.components.get1().get21().get1().entity)
+
+                modImplementation(catalog.geckolib.get1().get21().get1().fabric)
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
@@ -393,6 +413,9 @@ cloche {
 
                 modImplementation(catalog.accessories.get1().get20().get1().neoforge)
                 modImplementation(catalog.curios.get1().get20().get1().forge)
+
+                modImplementation(catalog.geckolib.get1().get20().get1().forge)
+                implementation(catalog.mclib)
             }
         }
     }
@@ -421,13 +444,13 @@ cloche {
 
                 modImplementation(catalog.accessories.get1().get21().get1().neoforge)
                 modImplementation(catalog.curios.get1().get21().get1().neoforge)
+
+                modImplementation(catalog.geckolib.get1().get21().get1().neoforge)
             }
         }
 
         run container@{
             val featureName = "containerNeoforge"
-            val metadataDirectory = project.layout.buildDirectory.dir("generated")
-                .map { it.dir("metadata").dir(featureName) }
             val include = configurations.register(lowerCamelCaseGradleName(featureName, "include")) {
                 isCanBeResolved = true
                 isTransitive = false
@@ -531,9 +554,6 @@ cloche {
     }
 }
 
-val SourceSet.mergedIncludeJarTaskName: String
-    get() = lowerCamelCaseGradleName(takeUnless(SourceSet::isMain)?.name, "mergeIncludeJar")
-
 val SourceSet.includeJarTaskName: String
     get() = lowerCamelCaseGradleName(takeUnless(SourceSet::isMain)?.name, "includeJar")
 
@@ -541,23 +561,6 @@ val MinecraftTarget.includeJarTaskName: String
     get() = when (this) {
         is FabricTarget -> sourceSet.includeJarTaskName
         is ForgeLikeTarget -> sourceSet.includeJarTaskName
-        else -> throw IllegalArgumentException("Unsupported target $this")
-    }
-
-val FabricTarget.modsJsonPath: String
-    get() = "fabric.mod.json"
-
-val ForgeTarget.modsTomlPath: String
-    get() = "META-INF/mods.toml"
-
-val NeoforgeTarget.modsTomlPath: String
-    get() = "META-INF/neoforge.mods.toml"
-
-val MinecraftTarget.modsManifestPath: String
-    get() = when (this) {
-        is FabricTarget -> modsJsonPath
-        is ForgeTarget -> modsTomlPath
-        is NeoforgeTarget -> modsTomlPath
         else -> throw IllegalArgumentException("Unsupported target $this")
     }
 

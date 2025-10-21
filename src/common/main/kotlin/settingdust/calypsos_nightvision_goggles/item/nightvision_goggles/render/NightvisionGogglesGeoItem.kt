@@ -1,0 +1,5 @@
+package settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.render
+
+import software.bernie.geckolib.animatable.GeoItem
+
+interface NightvisionGogglesGeoItem : GeoItem

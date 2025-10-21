@@ -7,8 +7,7 @@ import net.minecraft.world.level.Level
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
 
-class NightvisionGogglesItem(variant: NightvisionGogglesVariant) :
-    NightvisionGogglesItem(variant) {
+open class NightvisionGogglesItem(variant: NightvisionGogglesVariant) : NightvisionGogglesItem(variant) {
     class Factory : NightvisionGogglesItem.Factory {
         override fun invoke(variant: NightvisionGogglesVariant) =
             settingdust.calypsos_nightvision_goggles.v1_20.item.nightvision_goggles.NightvisionGogglesItem(variant)

@@ -3,6 +3,7 @@ package settingdust.calypsos_nightvision_goggles.effect
 import net.minecraft.world.effect.MobEffect
 import net.minecraft.world.effect.MobEffectCategory
 import net.minecraft.world.entity.LivingEntity
+import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.hasEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 
 abstract class ShadowHopperMobEffect : MobEffect(
@@ -10,23 +11,25 @@ abstract class ShadowHopperMobEffect : MobEffect(
     0x74B602
 ) {
     fun tick(target: LivingEntity) {
-        val brightness = target.level().getRawBrightness(target.blockPosition(), 0)
+        val brightness = target.level().getMaxLocalRawBrightness(target.blockPosition())
         val amplifier = 7 - brightness
         if (amplifier < 0) return
-        target.addEffect(
-            MobEffectAdapter.createMobEffectInstance(
-                MobEffectAdapter.Speed,
-                5,
-                amplifier,
-                ambient = false,
-                visible = false,
-                showIcon = false
+        if (!target.hasEffect(MobEffectAdapter.Speed)) {
+            target.addEffect(
+                MobEffectAdapter.createMobEffectInstance(
+                    MobEffectAdapter.Speed,
+                    2 * 20,
+                    amplifier,
+                    ambient = false,
+                    visible = false,
+                    showIcon = false
+                )
             )
-        )
+        }
         target.addEffect(
             MobEffectAdapter.createMobEffectInstance(
                 MobEffectAdapter.JumpBoost,
-                5,
+                2 * 20,
                 amplifier,
                 ambient = false,
                 visible = false,
@@ -36,6 +39,6 @@ abstract class ShadowHopperMobEffect : MobEffect(
     }
 
     fun shouldApplyEffectTickThisTick(duration: Int): Boolean {
-        return duration % 5 == 0
+        return duration % 20 == 0
     }
 }

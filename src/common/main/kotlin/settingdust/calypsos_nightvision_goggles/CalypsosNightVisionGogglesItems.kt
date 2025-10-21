@@ -1,7 +1,9 @@
 package settingdust.calypsos_nightvision_goggles
 
 import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.tags.TagKey
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Item
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter.Companion.creativeTab
@@ -32,5 +34,10 @@ object CalypsosNightVisionGogglesItems {
         register(CalypsosNightVisionGogglesKeys.NightOwlGoggles, factory(NightOwlVariant).also {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
+    }
+
+    object Tags {
+        @JvmField
+        val Goggles = TagKey.create(Registries.ITEM, CalypsosNightVisionGoggles.id("goggles"))
     }
 }

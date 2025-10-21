@@ -5,19 +5,24 @@ import net.minecraft.world.effect.MobEffectCategory
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.removeEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter.Companion.effectHolder
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter.Companion.effectReference
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
+import software.bernie.geckolib.model.DefaultedItemGeoModel
 import java.util.*
 
 object PurifierVariant : NightvisionGogglesVariant {
     override val description = listOf(
         Component.translatable("item.${CalypsosNightVisionGoggles.ID}.purifier_goggles.tooltip.description")
     )
+
+    override val model = DefaultedItemGeoModel<NightvisionGogglesItem>(CalypsosNightVisionGogglesKeys.PurifierGoggles)
 
     private val lastTickForEntity = mutableMapOf<UUID, Int>()
 

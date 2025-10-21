@@ -6,15 +6,18 @@ import net.minecraft.world.entity.projectile.ProjectileUtil
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.EntityHitResult
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.ItemStackAdapter.Companion.hurtNoBreak
 import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.hasEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
 import settingdust.calypsos_nightvision_goggles.util.MobEffectPredicate
+import software.bernie.geckolib.model.DefaultedItemGeoModel
 import java.util.*
 
 
@@ -31,6 +34,8 @@ object WatcherVariant : NightvisionGogglesVariant {
     override val description = listOf(
         Component.translatable("item.${CalypsosNightVisionGoggles.ID}.the_watcher_goggles.tooltip.description")
     )
+
+    override val model = DefaultedItemGeoModel<NightvisionGogglesItem>(CalypsosNightVisionGogglesKeys.TheWatcherGoggles)
 
     private val lookingEntityForEntity = mutableMapOf<UUID, UUID>()
     private val lookingTicksForEntity = mutableMapOf<UUID, Int>()

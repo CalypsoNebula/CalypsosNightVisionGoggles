@@ -13,7 +13,7 @@ abstract class ItsWatchingMobEffect : MobEffect(
         target.addEffect(
             MobEffectAdapter.createMobEffectInstance(
                 MobEffectAdapter.Slowness,
-                5,
+                2 * 20,
                 0,
                 ambient = false,
                 visible = false,
@@ -23,7 +23,7 @@ abstract class ItsWatchingMobEffect : MobEffect(
         target.addEffect(
             MobEffectAdapter.createMobEffectInstance(
                 MobEffectAdapter.Weakness,
-                5,
+                2 * 20,
                 0,
                 ambient = false,
                 visible = false,
@@ -33,6 +33,6 @@ abstract class ItsWatchingMobEffect : MobEffect(
     }
 
     fun shouldApplyEffectTickThisTick(duration: Int): Boolean {
-        return duration % 5 == 0
+        return duration % 20 == 0
     }
 }

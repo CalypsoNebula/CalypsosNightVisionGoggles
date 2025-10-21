@@ -24,11 +24,15 @@ import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeyBin
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.render.NightvisionGogglesGeoItem
 import settingdust.calypsos_nightvision_goggles.mixin.AbstractContainerScreenAccessor
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
+import software.bernie.geckolib.animatable.GeoItem
 
 abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
-    Item(Properties().stacksTo(1).durability(1800 + 1)), Equipable {
+    Item(Properties().stacksTo(1).durability(1800 + 1)),
+    Equipable,
+    GeoItem by ServiceLoaderUtil.findService<NightvisionGogglesGeoItem>() {
     interface Factory {
         companion object : Factory by ServiceLoaderUtil.findService()
 

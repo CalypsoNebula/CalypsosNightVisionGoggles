@@ -239,6 +239,31 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
             )
         )
     )
+
+    library("mclib", "com.eliotlash.mclib", "mclib").version("20")
+    maven(
+        id = "geckolib",
+        group = "software.bernie.geckolib",
+        artifact = "geckolib",
+        mcVersionToVersion = mapOf(
+            "1.20.1" to "4.8.2",
+            "1.21.1" to "4.8.2"
+        ),
+        mapping = listOf(
+            VariantMapping(
+                "1.20.1", mapOf(
+                    "forge" to VariantConfig(ArtifactTransformers.artifactDashLoaderDashMcVersion),
+                    "fabric" to VariantConfig(ArtifactTransformers.artifactDashLoaderDashMcVersion)
+                )
+            ),
+            VariantMapping(
+                "1.21.1", mapOf(
+                    "neoforge" to VariantConfig(ArtifactTransformers.artifactDashLoaderDashMcVersion),
+                    "fabric" to VariantConfig(ArtifactTransformers.artifactDashLoaderDashMcVersion)
+                )
+            )
+        )
+    )
 }
 
 plugins {

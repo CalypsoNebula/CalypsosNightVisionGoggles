@@ -8,6 +8,7 @@ import settingdust.calypsos_nightvision_goggles.adapter.ItemStackAdapter.Compani
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.util.MobEffectPredicate
+import software.bernie.geckolib.model.GeoModel
 
 interface NightvisionGogglesVariant {
     companion object {
@@ -20,6 +21,8 @@ interface NightvisionGogglesVariant {
             showIcon = true
         )
     }
+
+    val model: GeoModel<NightvisionGogglesItem>
 
     val description: List<Component>
         get() = emptyList()

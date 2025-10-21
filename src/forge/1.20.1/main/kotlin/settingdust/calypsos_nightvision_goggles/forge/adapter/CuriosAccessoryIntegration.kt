@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.entity.RenderLayerParent
+import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
@@ -87,6 +88,10 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
         }
     }
 
-    override fun getEquipped(entity: LivingEntity, item: Item) =
-        CuriosApi.getCuriosInventory(entity).resolve().flatMap { it.findFirstCurio(item) }.getOrNull()?.stack
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+        CuriosApi.getCuriosInventory(entity).resolve().flatMap {
+            it.findFirstCurio {
+                it.itemHolder in items
+            }
+        }.getOrNull()?.stack
 }

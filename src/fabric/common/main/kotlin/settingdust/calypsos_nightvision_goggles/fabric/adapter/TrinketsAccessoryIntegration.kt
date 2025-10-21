@@ -9,6 +9,7 @@ import dev.emi.trinkets.api.client.TrinketRenderer
 import dev.emi.trinkets.api.client.TrinketRendererRegistry
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.renderer.MultiBufferSource
+import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
@@ -71,6 +72,6 @@ class TrinketsAccessoryIntegration : AccessoryIntegration {
         TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles, Renderer)
     }
 
-    override fun getEquipped(entity: LivingEntity, item: Item): ItemStack? =
-        TrinketsApi.getTrinketComponent(entity).getOrNull()?.getEquipped(item)?.firstOrNull()?.b
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+        TrinketsApi.getTrinketComponent(entity).getOrNull()?.getEquipped { it.itemHolder in items }?.firstOrNull()?.b
 }
