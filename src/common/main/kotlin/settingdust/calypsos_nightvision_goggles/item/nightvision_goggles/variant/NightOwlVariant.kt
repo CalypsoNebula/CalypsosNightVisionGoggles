@@ -6,6 +6,7 @@ import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
+import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.hasEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
@@ -34,15 +35,17 @@ object NightOwlVariant : NightvisionGogglesVariant {
         if (stack.damageValue >= stack.maxDamage - 1 || !mode.isEnabled(stack, owner)) {
             return
         }
-        owner.addEffect(
-            MobEffectAdapter.createMobEffectInstance(
-                ShadowHopperPredicate.type,
-                ShadowHopperPredicate.duration!!,
-                ShadowHopperPredicate.amplifier!!,
-                ShadowHopperPredicate.ambient!!,
-                ShadowHopperPredicate.visible!!,
-                ShadowHopperPredicate.showIcon!!
+        if (!owner.hasEffect(ShadowHopperPredicate.type)) {
+            owner.addEffect(
+                MobEffectAdapter.createMobEffectInstance(
+                    ShadowHopperPredicate.type,
+                    ShadowHopperPredicate.duration!!,
+                    ShadowHopperPredicate.amplifier!!,
+                    ShadowHopperPredicate.ambient!!,
+                    ShadowHopperPredicate.visible!!,
+                    ShadowHopperPredicate.showIcon!!
+                )
             )
-        )
+        }
     }
 }

@@ -14,10 +14,10 @@ abstract class ShadowHopperMobEffect : MobEffect(
         val brightness = target.level().getMaxLocalRawBrightness(target.blockPosition())
         val amplifier = 7 - brightness
         if (amplifier < 0) return
-        if (!target.hasEffect(MobEffectAdapter.Speed)) {
+        if (!target.hasEffect(MobEffectAdapter.JumpBoost)) {
             target.addEffect(
                 MobEffectAdapter.createMobEffectInstance(
-                    MobEffectAdapter.Speed,
+                    MobEffectAdapter.JumpBoost,
                     2 * 20,
                     amplifier,
                     ambient = false,
@@ -26,16 +26,6 @@ abstract class ShadowHopperMobEffect : MobEffect(
                 )
             )
         }
-        target.addEffect(
-            MobEffectAdapter.createMobEffectInstance(
-                MobEffectAdapter.JumpBoost,
-                2 * 20,
-                amplifier,
-                ambient = false,
-                visible = false,
-                showIcon = false
-            )
-        )
     }
 
     fun shouldApplyEffectTickThisTick(duration: Int): Boolean {
