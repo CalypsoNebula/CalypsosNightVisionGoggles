@@ -5,7 +5,7 @@ import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache
 import software.bernie.geckolib.core.animation.AnimatableManager
 import software.bernie.geckolib.util.GeckoLibUtil
 
-open class NightvisionGogglesGeoItem : NightvisionGogglesGeoItem {
+abstract class NightvisionGogglesGeoItem : NightvisionGogglesGeoItem {
     private val animatableCache: AnimatableInstanceCache = GeckoLibUtil.createInstanceCache(this)
 
     override fun registerControllers(registrar: AnimatableManager.ControllerRegistrar) {

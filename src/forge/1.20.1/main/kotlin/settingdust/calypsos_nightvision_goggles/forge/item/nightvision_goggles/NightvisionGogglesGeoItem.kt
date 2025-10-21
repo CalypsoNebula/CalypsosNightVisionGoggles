@@ -1,0 +1,5 @@
+package settingdust.calypsos_nightvision_goggles.forge.item.nightvision_goggles
+
+import settingdust.calypsos_nightvision_goggles.v1_20.item.nightvision_goggles.NightvisionGogglesGeoItem
+
+class NightvisionGogglesGeoItem : NightvisionGogglesGeoItem()
