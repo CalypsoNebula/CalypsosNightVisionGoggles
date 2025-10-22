@@ -1,8 +1,5 @@
 {
     "values": [
-        "calypsos_nightvision_goggles:nightvision_goggles",
-        "calypsos_nightvision_goggles:the_watcher_goggles",
-        "calypsos_nightvision_goggles:purifier_goggles",
-        "calypsos_nightvision_goggles:night_owl_googles"
+        "#calypsos_nightvision_goggles:goggles"
     ]
 }
