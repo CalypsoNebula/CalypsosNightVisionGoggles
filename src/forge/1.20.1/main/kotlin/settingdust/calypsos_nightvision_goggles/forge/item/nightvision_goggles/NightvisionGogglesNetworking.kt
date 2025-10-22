@@ -1,6 +1,5 @@
 package settingdust.calypsos_nightvision_goggles.forge.item.nightvision_goggles
 
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.inventory.Slot
 import net.minecraftforge.network.NetworkEvent
@@ -11,10 +10,10 @@ import settingdust.calypsos_nightvision_goggles.util.ContainerType
 import java.util.function.Supplier
 
 class NightvisionGogglesNetworking : NightvisionGogglesNetworking {
-    override fun c2sSwitchMode(slot: Slot) {
+    override fun c2sSwitchMode(slot: Slot, isCreativeSlot: Boolean) {
         require(LoaderAdapter.isClient)
         val index =
-            if (slot is CreativeModeInventoryScreen.SlotWrapper) {
+            if (isCreativeSlot) {
                 slot.containerSlot
             } else {
                 slot.index

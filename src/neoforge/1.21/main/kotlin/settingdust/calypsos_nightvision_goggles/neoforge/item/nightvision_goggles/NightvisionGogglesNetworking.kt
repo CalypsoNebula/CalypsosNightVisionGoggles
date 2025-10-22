@@ -1,6 +1,5 @@
 package settingdust.calypsos_nightvision_goggles.neoforge.item.nightvision_goggles
 
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
@@ -13,10 +12,10 @@ import settingdust.calypsos_nightvision_goggles.util.ContainerType
 import settingdust.calypsos_nightvision_goggles.v1_21.util.CalypsosNightVisionGogglesItemsStreamCodecs
 
 class NightvisionGogglesNetworking : NightvisionGogglesNetworking {
-    override fun c2sSwitchMode(slot: Slot) {
+    override fun c2sSwitchMode(slot: Slot, isCreativeSlot: Boolean) {
         require(LoaderAdapter.isClient)
         val index =
-            if (slot is CreativeModeInventoryScreen.SlotWrapper) {
+            if (isCreativeSlot) {
                 slot.containerSlot
             } else {
                 slot.index

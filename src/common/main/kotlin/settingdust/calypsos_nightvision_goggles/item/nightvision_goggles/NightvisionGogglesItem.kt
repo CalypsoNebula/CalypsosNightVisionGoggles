@@ -56,7 +56,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
                 || !hoveredSlot.hasItem()
                 || hoveredSlot.item.item !== this
             ) return@onKeyPressedInScreen
-            NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot)
+            NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot, screen is CreativeModeInventoryScreen)
             Minecraft.getInstance().soundManager.play(
                 SimpleSoundInstance.forUI(CalypsosNightVisionGogglesSoundEvents.UiModeSwitch, 1f, 1f)
             )

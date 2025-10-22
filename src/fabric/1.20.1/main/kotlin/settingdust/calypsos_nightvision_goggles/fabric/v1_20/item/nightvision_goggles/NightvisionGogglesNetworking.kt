@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
 import net.fabricmc.fabric.api.networking.v1.FabricPacket
 import net.fabricmc.fabric.api.networking.v1.PacketType
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.inventory.Slot
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
@@ -15,11 +14,11 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.Nightvi
 import settingdust.calypsos_nightvision_goggles.util.ContainerType
 
 class NightvisionGogglesNetworking : NightvisionGogglesNetworking {
-    override fun c2sSwitchMode(slot: Slot) {
+    override fun c2sSwitchMode(slot: Slot, isCreativeSlot: Boolean) {
         require(LoaderAdapter.isClient)
         requireNotNull(TrinketsContainerType)
         val index =
-            if (slot is CreativeModeInventoryScreen.SlotWrapper) {
+            if (isCreativeSlot) {
                 slot.containerSlot
             } else {
                 slot.index

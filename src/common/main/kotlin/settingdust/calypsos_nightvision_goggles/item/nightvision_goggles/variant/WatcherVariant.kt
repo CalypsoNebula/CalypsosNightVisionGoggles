@@ -9,7 +9,6 @@ import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
-import settingdust.calypsos_nightvision_goggles.adapter.ItemStackAdapter.Companion.hurtNoBreak
 import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.hasEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
@@ -70,7 +69,6 @@ object WatcherVariant : NightvisionGogglesVariant {
                 )
             )
         ) {
-            stack.hurtNoBreak(owner, 90)
             lookingEntityForEntity.remove(owner.uuid)
             lookingTicksForEntity[owner.uuid] = 0
             target.playSound(CalypsosNightVisionGogglesSoundEvents.AccessoryWatching)

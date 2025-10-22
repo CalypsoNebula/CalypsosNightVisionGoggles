@@ -4,7 +4,6 @@ import dev.emi.trinkets.CreativeTrinketSlot
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
@@ -17,11 +16,11 @@ import settingdust.calypsos_nightvision_goggles.util.ContainerType
 import settingdust.calypsos_nightvision_goggles.v1_21.util.CalypsosNightVisionGogglesItemsStreamCodecs
 
 class NightvisionGogglesNetworking : NightvisionGogglesNetworking {
-    override fun c2sSwitchMode(slot: Slot) {
+    override fun c2sSwitchMode(slot: Slot, isCreativeSlot: Boolean) {
         require(LoaderAdapter.isClient)
         requireNotNull(TrinketsContainerType)
         val index =
-            if (slot is CreativeModeInventoryScreen.SlotWrapper) {
+            if (isCreativeSlot) {
                 slot.containerSlot
             } else {
                 slot.index

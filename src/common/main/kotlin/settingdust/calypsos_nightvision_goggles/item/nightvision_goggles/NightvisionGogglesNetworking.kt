@@ -24,6 +24,5 @@ interface NightvisionGogglesNetworking {
         }
     }
 
-    fun c2sSwitchMode(slot: Slot)
-
+    fun c2sSwitchMode(slot: Slot, isCreativeSlot: Boolean)
 }
