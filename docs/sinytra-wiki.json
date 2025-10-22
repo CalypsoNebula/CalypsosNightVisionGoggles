@@ -2,7 +2,8 @@
     "id": "calypsos-nightvision-goggles",
     "modid": "calypsos_nightvision_goggles",
     "platforms": {
-        "curseforge": "calypsos-mobs"
+        "curseforge": "calypsos-nightvision-goggles",
+        "modrinth": "calypsos-nightvision-goggles"
     },
     "owners": [
         "calypsonebula",
