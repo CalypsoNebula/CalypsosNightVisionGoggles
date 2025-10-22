@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
+import settingdust.calypsos_nightvision_goggles.adapter.ItemStackAdapter.Companion.hurtNoBreak
 import settingdust.calypsos_nightvision_goggles.adapter.LivingEntityAdapter.Companion.removeEffect
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter.Companion.effectHolder
 import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter.Companion.effectReference
@@ -41,6 +42,9 @@ object PurifierVariant : NightvisionGogglesVariant {
         for (instance in owner.activeEffects.filter { it.effectReference.category === MobEffectCategory.HARMFUL }) {
             if (owner.removeEffect(instance.effectHolder)) result = true
         }
-        if (result) owner.playSound(CalypsosNightVisionGogglesSoundEvents.AccessoryPurify)
+        if (result) {
+            stack.hurtNoBreak(owner, 90 * 20)
+            owner.playSound(CalypsosNightVisionGogglesSoundEvents.AccessoryPurify)
+        }
     }
 }
