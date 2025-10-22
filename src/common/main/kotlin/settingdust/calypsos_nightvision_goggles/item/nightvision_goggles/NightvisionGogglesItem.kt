@@ -30,7 +30,7 @@ import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 import software.bernie.geckolib.animatable.GeoItem
 
 abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
-    Item(Properties().stacksTo(1).durability(1800 + 1)),
+    Item(Properties().stacksTo(1).durability(1800 * 20 + 1)),
     Equipable,
     GeoItem by ServiceLoaderUtil.findService<NightvisionGogglesGeoItem>() {
     interface Factory {
@@ -42,9 +42,9 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
     private var expanded = false
 
     val DURABILITY_PROVIDERS = mapOf(
-        Items.SPIDER_EYE to 180,
-        Items.FERMENTED_SPIDER_EYE to 540,
-        Items.GLOWSTONE to 540
+        Items.SPIDER_EYE to 180 * 20,
+        Items.FERMENTED_SPIDER_EYE to 540 * 20,
+        Items.GLOWSTONE to 540 * 20
     )
 
     init {
