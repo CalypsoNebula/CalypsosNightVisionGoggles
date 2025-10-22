@@ -265,8 +265,6 @@ cloche {
                 modImplementation(catalog.cardinal.components.get1().get21().get1().entity)
 
                 modImplementation(catalog.geckolib.get1().get21().get1().fabric)
-
-                modRuntimeOnly("org.sinytra:item-asset-export-fabric:1.0.2+1.21")
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
