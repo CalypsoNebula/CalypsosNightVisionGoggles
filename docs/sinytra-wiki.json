@@ -2,7 +2,6 @@
     "id": "calypsos-nightvision-goggles",
     "modid": "calypsos_nightvision_goggles",
     "platforms": {
-        "modrinth": "calypsos-nightvision-goggles",
-        "curseforge": "calypsos-nightvision-goggles"
+        "curseforge": "calypsos-candy-workshop"
     }
 }
