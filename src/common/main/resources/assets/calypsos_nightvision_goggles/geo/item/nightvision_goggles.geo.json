@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.夜视仪A2 - Converted",
+				"identifier": "geometry.夜视仪A3 - Converted",
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 2,
@@ -184,7 +184,7 @@
 							"uv": {
 								"north": {"uv": [12, 2], "uv_size": [2, 2]},
 								"east": {"uv": [0, 8], "uv_size": [0, 2]},
-								"south": {"uv": [12, 2], "uv_size": [2, 2]},
+								"south": {"uv": [32, 2], "uv_size": [2, 2]},
 								"west": {"uv": [1, 8], "uv_size": [0, 2]},
 								"up": {"uv": [0, 8], "uv_size": [1, 0]},
 								"down": {"uv": [1, 8], "uv_size": [1, 0]}
@@ -251,7 +251,7 @@
 							"uv": {
 								"north": {"uv": [28, 2], "uv_size": [2, 2]},
 								"east": {"uv": [16, 8], "uv_size": [0, 2]},
-								"south": {"uv": [28, 2], "uv_size": [2, 2]},
+								"south": {"uv": [32, 2], "uv_size": [2, 2]},
 								"west": {"uv": [17, 8], "uv_size": [0, 2]},
 								"up": {"uv": [16, 8], "uv_size": [1, 0]},
 								"down": {"uv": [17, 8], "uv_size": [1, 0]}
