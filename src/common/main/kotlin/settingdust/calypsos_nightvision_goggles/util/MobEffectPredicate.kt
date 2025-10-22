@@ -16,7 +16,7 @@ data class MobEffectPredicate(
     fun test(effect: MobEffectInstance?): Boolean {
         return when {
             type.value() != effect?.effectReference -> false
-            duration != null && effect.endsWithin(duration) -> false
+            duration != null && !effect.endsWithin(duration) -> false
             amplifier != null && effect.amplifier != amplifier -> false
             ambient != null && effect.isAmbient != ambient -> false
             visible != null && effect.isVisible != visible -> false
