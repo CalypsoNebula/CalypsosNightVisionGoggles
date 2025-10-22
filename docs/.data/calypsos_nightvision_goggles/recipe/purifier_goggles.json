@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:milk_bucket"
+    },
+    "1": {
+      "item": "minecraft:emerald"
+    },
+    "2": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "3": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "010",
+    "121",
+    "313"
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:purifier_goggles"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "1": {
+      "item": "minecraft:leather"
+    },
+    "2": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "3": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "4": {
+      "item": "minecraft:iron_block"
+    },
+    "5": {
+      "item": "minecraft:slime_block"
+    }
+  },
+  "pattern": [
+    "010",
+    "232",
+    "454"
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:night_owl_goggles"
+  },
+  "show_notification": false
+}

@@ -31,6 +31,8 @@ plugins {
     id("com.gradleup.shadow") version "9.0.2"
 
     id("earth.terrarium.cloche") version "0.13.4"
+
+    id("org.moddedmc.wiki.toolkit") version "0.3.2"
 }
 
 val archive_name: String by rootProject.properties
@@ -43,6 +45,14 @@ val gitVersion: Closure<String> by extra
 version = gitVersion()
 
 base { archivesName = archive_name }
+
+wiki {
+    docs {
+        create(id) {
+            root = file("docs")
+        }
+    }
+}
 
 repositories {
     exclusiveContent {
@@ -255,6 +265,8 @@ cloche {
                 modImplementation(catalog.cardinal.components.get1().get21().get1().entity)
 
                 modImplementation(catalog.geckolib.get1().get21().get1().fabric)
+
+                modRuntimeOnly("org.sinytra:item-asset-export-fabric:1.0.2+1.21")
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {

@@ -1,0 +1,14 @@
+{
+  "calypsos_nightvision_goggles:nightvision_goggles": {
+    "stack_size": 1
+  },
+  "calypsos_nightvision_goggles:the_watcher_goggles": {
+    "stack_size": 1
+  },
+  "calypsos_nightvision_goggles:purifier_goggles": {
+    "stack_size": 1
+  },
+  "calypsos_nightvision_goggles:night_owl_goggles": {
+    "stack_size": 1
+  }
+}
