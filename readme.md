@@ -15,11 +15,9 @@ while advanced versions offer special abilities to help you explore the darkness
 
 ## About Goggles
 
-
-
 ### 🥽 Night Vision Goggles
 
-<img src="https://media.forgecdn.net/attachments/1365/344/aeaaaca-gif.gif" alt="alt text" width="125">
+<img src="https://media.forgecdn.net/attachments/1365/344/aeaaaca-gif.gif" alt="alt text" width="125"></img>
 
 > “See through the darkness. Toggleable and rechargeable.”
 
@@ -29,28 +27,26 @@ while advanced versions offer special abilities to help you explore the darkness
 - **Recharge using:** `Spider Eyes`, `Fermented Spider Eyes`, or `Glowstone Dust`
 - *Can be worn as a helmet or in the curios/trinket slot if compatible with other mods.*
 
-
-
 <br><br>
 
 ### 🦉 Night Owl Goggles
 
-<img src="https://media.forgecdn.net/attachments/1365/342/aeaab3-gif.gif" alt="alt text" width="125">
+<img src="https://media.forgecdn.net/attachments/1365/342/aeaab3-gif.gif" alt="alt text" width="125"></img>
 
 > “Shadows awaken your senses. Darkness is not a barrier to the future.”
 
 - Upgraded from **Night Vision Goggles**, retaining all functions, +2 Armor.
-- When activated and in light levels below 7, grants the **“Shadow Hopper”** buff.
- #### [Buff] Shadow Hopper
+- When activated and in light levels below 7, grants the **"Shadow Hopper"** buff.
+
+#### [Buff] Shadow Hopper
 - Increases Speed and Jump Boost.
 - The lower the light level, the stronger the effect.
-
 
 <br><br>
 
 ### 🧼 Purifier Goggles
 
-<img src="https://media.forgecdn.net/attachments/1365/341/aeaac2-gif.gif" alt="alt text" width="125">
+<img src="https://media.forgecdn.net/attachments/1365/341/aeaac2-gif.gif" alt="alt text" width="125"></img>
 
 > “A pure, clean, and healthy future is our directive.”
 
@@ -62,7 +58,7 @@ while advanced versions offer special abilities to help you explore the darkness
 
 ### 👁️ The Watcher Goggles
 
-<img src="https://media.forgecdn.net/attachments/1365/343/aeaad1-gif.gif" alt="alt text" width="125">
+<img src="https://media.forgecdn.net/attachments/1365/343/aeaad1-gif.gif" alt="alt text" width="125"></img>
 
 > “Wait... what if this timeline’s future isn’t the one we expected?”
 
