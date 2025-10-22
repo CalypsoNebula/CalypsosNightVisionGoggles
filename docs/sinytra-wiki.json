@@ -3,5 +3,8 @@
     "modid": "calypsos_nightvision_goggles",
     "platforms": {
         "curseforge": "calypsos-candy-workshop"
-    }
+    },
+    "owners": [
+        "calypsonebula"
+    ]
 }
