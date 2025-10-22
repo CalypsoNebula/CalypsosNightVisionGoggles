@@ -1,6 +1,7 @@
 package settingdust.calypsos_nightvision_goggles.item.nightvision_goggles
 
 import com.mojang.blaze3d.vertex.PoseStack
+import com.mojang.math.Axis
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.HumanoidModel
 import net.minecraft.client.renderer.MultiBufferSource
@@ -26,10 +27,12 @@ object NightvisionGogglesAccessoryRenderer : AccessoryRenderer {
         val entityModel = entityRenderer.model as? HumanoidModel<*> ?: return
         poseStack.pushPose()
         poseStack.transformToModelPart(entityModel.head)
+        poseStack.mulPose(Axis.ZP.rotationDegrees(180f))
+        poseStack.scale(0.625f, 0.625f, 0.625f)
         Minecraft.getInstance().itemRenderer.renderStatic(
             owner,
             stack,
-            ItemDisplayContext.FIXED,
+            ItemDisplayContext.HEAD,
             false,
             poseStack,
             buffer,

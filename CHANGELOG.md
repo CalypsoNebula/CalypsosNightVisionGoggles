@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2025-10-22
+### :sparkles: New Features
+- [`0e696a5`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/0e696a51919d6453612bf388842c001880b325cd) - add googles variants *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`7fdb191`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/7fdb19125aa723e73140d5c4b06464694c7a5485) - add model for variants *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`2f429ac`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/2f429acecb20d4f4d0ad352b1d6ff6446352063a) - add accessoies for the variants *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`b7667b3`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/b7667b35f20effd6d824531afd3474c6e188d04d) - add recipes *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`bd59c97`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/bd59c972b2ccc4a1026491ba37671c21f632f556) - add localization *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`d3ff036`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/d3ff036515f70ead55b3accaa73c8d8e28e069b9) - add effects *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`2c71858`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/2c7185825e40425421f8993d7d441072b3d5ddad) - render with geckolib *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`b747047`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/b7470470168e3b95712b9581cccf8b8e83ecc74d) - add glowing for watcher *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`611c31a`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/611c31aa56efa4897c3ce1a15eff0b1d1cd0e8ec) - don't hurt after watching *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`dc5eed9`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/dc5eed973fc11bb037a39c58c74158e38f684c2c) - add name for effects *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`ce1fdcd`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/ce1fdcdaa5e8b4e693cad7f4901434efbb284ae7) - mooooooooooooooore durability *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`f8aafa8`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/f8aafa877a33f212c3edbb247236a07d146d0419) - hurt when purify *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`257a8c7`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/257a8c7ae010abf7755c5d7e4c45da4bb0f10785) - move the NightvisionGogglesGeoItem implementation to forge *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`f20cbb3`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/f20cbb3f719835d553db8f1cc8ed20fa60e94afd) - avoid blink with nightvision *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`a00eb8b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a00eb8b152529334b83d4cc3739c9bcdb07727b1) - allow switch mode for variants *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :recycle: Refactors
+- [`c06849b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/c06849bc8c81ab40906ed19fe3523a6b4307d7d1) - use attributes as possible for effects *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.1.1] - 2025-10-20
 ### :recycle: Refactors
 - [`2444387`](https://github.com/CalypsoNebula/CalypsosAfflatus/commit/2444387563e8247b76a69b6134659c56a782c95c) - rename to Calypso's Night Vision Goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -40,3 +64,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [0.1.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.0.0...0.1.0
 [0.1.1]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.0...0.1.1
+[0.2.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.1...0.2.0
