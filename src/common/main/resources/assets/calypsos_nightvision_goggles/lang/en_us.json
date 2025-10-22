@@ -15,5 +15,7 @@
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.1": "§7+Can be refilled with: %s %s %s",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.2": "§7+Auto mode: only activates when it's dark enough",
     "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.3": "§7+Consumes 1 durability per second when on, never breaks completely",
-    "tooltip.calypsos_nightvision_goggles.expand": "§8Hold §7[Shift] §8to view more information "
+    "tooltip.calypsos_nightvision_goggles.expand": "§8Hold §7[Shift] §8to view more information",
+    "effect.calypsos_nightvision_goggles.shadow_hopper": "Shadow Hopper",
+    "effect.calypsos_nightvision_goggles.its_watching": "It's Watching!"
 }
