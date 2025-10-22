@@ -27,7 +27,7 @@ while advanced versions offer special abilities to help you explore the darkness
 - **Recharge using:** `Spider Eyes`, `Fermented Spider Eyes`, or `Glowstone Dust`
 - *Can be worn as a helmet or in the curios/trinket slot if compatible with other mods.*
 
-<br><br>
+<br/><br/>
 
 ### 🦉 Night Owl Goggles
 
@@ -42,7 +42,7 @@ while advanced versions offer special abilities to help you explore the darkness
 - Increases Speed and Jump Boost.
 - The lower the light level, the stronger the effect.
 
-<br><br>
+<br/><br/>
 
 ### 🧼 Purifier Goggles
 
@@ -54,7 +54,7 @@ while advanced versions offer special abilities to help you explore the darkness
 - When activated, automatically consumes 90 energy to **remove negative effects.**
 - Has a 3-second cooldown to prevent excessive energy use in special cases.
 
-<br><br>
+<br/><br/>
 
 ### 👁️ The Watcher Goggles
 
