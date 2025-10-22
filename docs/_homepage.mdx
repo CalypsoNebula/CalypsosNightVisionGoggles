@@ -1,6 +1,6 @@
 # Calypso's Night Vision Goggles
 
-</small>
+<small>
 (for friends who have difficulty viewing images or who need webpage translation)
 </small>
 
