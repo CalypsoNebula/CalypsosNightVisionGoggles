@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2] - 2025-10-22
+### :sparkles: New Features
+- [`67dd787`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/67dd78735176c42909035e715f0e3e94e365fbd7) - add moddedwiki stuffs *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`af31ea6`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/af31ea65ac9c5a56946dd9501714f74a4e3a3f48) - avoid goggles' z fighting *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.2.0] - 2025-10-22
 ### :sparkles: New Features
 - [`0e696a5`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/0e696a51919d6453612bf388842c001880b325cd) - add googles variants *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -65,3 +71,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.0.0...0.1.0
 [0.1.1]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.0...0.1.1
 [0.2.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.1...0.2.0
+[0.2.2]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.1...0.2.2
