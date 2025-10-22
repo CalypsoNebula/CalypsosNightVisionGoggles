@@ -1,5 +1,6 @@
 package settingdust.calypsos_nightvision_goggles.v1_20.effect
 
+import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.ai.attributes.AttributeModifier
 import net.minecraft.world.entity.ai.attributes.Attributes
 import settingdust.calypsos_nightvision_goggles.effect.ItsWatchingMobEffect
@@ -20,4 +21,10 @@ class ItsWatchingMobEffect : ItsWatchingMobEffect() {
             AttributeModifier.Operation.ADDITION
         )
     }
+
+    override fun applyEffectTick(entity: LivingEntity, amplifier: Int) {
+        tick(entity)
+    }
+
+    override fun isDurationEffectTick(duration: Int, amplifier: Int) = shouldApplyEffectTickThisTick(duration)
 }

@@ -12,6 +12,7 @@ class MobEffectAdapter : MobEffectAdapter {
     override val Slowness = MobEffects.MOVEMENT_SLOWDOWN
     override val Speed = MobEffects.MOVEMENT_SPEED
     override val JumpBoost = MobEffects.JUMP
+    override val Glowing = MobEffects.GLOWING
 
 
     override val MobEffectInstance.effectHolder: Holder<MobEffect>
