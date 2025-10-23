@@ -8,7 +8,7 @@ object CalypsosNightVisionGogglesKeyBindings {
     val ACCESSORY_MODE = KeyMapping(
         "key.${CalypsosNightVisionGoggles.ID}.accessory_mode",
         InputConstants.Type.KEYSYM,
-        GLFW.GLFW_KEY_P,
+        GLFW.GLFW_KEY_D,
         "key.categories.${CalypsosNightVisionGoggles.ID}"
     )
 
