@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2025-10-23
+### :wrench: Chores
+- [`22cfa51`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/22cfa516b89ff398084bb528a324795b462a9a31) - change the default key to D *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.2.2] - 2025-10-22
 ### :sparkles: New Features
 - [`67dd787`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/67dd78735176c42909035e715f0e3e94e365fbd7) - add moddedwiki stuffs *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -72,3 +77,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.1]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.0...0.1.1
 [0.2.0]: https://github.com/CalypsoNebula/CalypsosAfflatus/compare/0.1.1...0.2.0
 [0.2.2]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.1...0.2.2
+[0.2.3]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.2...0.2.3
