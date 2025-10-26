@@ -26,7 +26,14 @@ object CalypsosNightVisionGogglesForge {
                 Entrypoint.init()
                 requireNotNull(CalypsosNightVisionGogglesNetworking)
             }
-            addListener<FMLClientSetupEvent> { Entrypoint.clientInit() }
+            addListener<FMLClientSetupEvent> {
+                addListener<RegisterKeyMappingsEvent> { event ->
+                    CalypsosNightVisionGogglesKeyBindings.registerKeyBindings { event.register(it) }
+                    (CalypsosNightVisionGogglesKeyBindings.ACCESSORY_MODE as KeyMapping).keyConflictContext =
+                        KeyConflictContext.GUI
+                }
+                Entrypoint.clientInit()
+            }
             addListener<RegisterEvent> { event ->
                 when (event.registryKey) {
                     Registries.ITEM -> CalypsosNightVisionGogglesItems.registerItems { id, value ->
@@ -41,10 +48,6 @@ object CalypsosNightVisionGogglesForge {
                         event.register(Registries.MOB_EFFECT, id) { value }
                     }
                 }
-            }
-            addListener<RegisterKeyMappingsEvent> { event ->
-                CalypsosNightVisionGogglesKeyBindings.registerKeyBindings { event.register(it) }
-                (CalypsosNightVisionGogglesKeyBindings.ACCESSORY_MODE as KeyMapping).keyConflictContext = KeyConflictContext.GUI
             }
         }
     }

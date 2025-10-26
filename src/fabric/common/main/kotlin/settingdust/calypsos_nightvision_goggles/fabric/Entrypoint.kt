@@ -1,9 +1,11 @@
 package settingdust.calypsos_nightvision_goggles.fabric
 
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeyBindings
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEffects
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.Entrypoint
@@ -28,6 +30,9 @@ object Entrypoint {
     }
 
     fun clientInit() {
+        CalypsosNightVisionGogglesKeyBindings.registerKeyBindings {
+            KeyBindingHelper.registerKeyBinding(it)
+        }
         Entrypoint.clientInit()
     }
 }
