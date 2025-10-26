@@ -44,7 +44,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
     val DURABILITY_PROVIDERS = mapOf(
         Items.SPIDER_EYE to 180 * 20,
         Items.FERMENTED_SPIDER_EYE to 540 * 20,
-        Items.GLOWSTONE to 540 * 20
+        Items.GLOWSTONE_DUST to 540 * 20
     )
 
     init {
@@ -82,7 +82,7 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
 
     fun MutableList<Component>.appendTooltip(stack: ItemStack) {
         if (stack.mode == null) stack.mode = NightvisionGogglesModeHandler.Mode.AUTO
-        val spiderEye = Component.translatable("item.minecraft.spider_eye").withStyle { it.withColor(0xC85A54) }
+        val spiderEye = Items.SPIDER_EYE.description.copy().withStyle { it.withColor(0xC85A54) }
         addAll(variant.description)
         add(
             Component.translatable(
@@ -135,8 +135,8 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
                 Component.translatable(
                     "item.${CalypsosNightVisionGoggles.ID}.nightvision_goggles.tooltip.expand.1",
                     spiderEye,
-                    Component.translatable("item.minecraft.fermented_spider_eye").withStyle { it.withColor(0xD4696F) },
-                    Component.translatable("block.minecraft.glowstone").withStyle { it.withColor(0xF4A460) }
+                    Items.FERMENTED_SPIDER_EYE.description.copy().withStyle { it.withColor(0xD4696F) },
+                    Items.GLOWSTONE_DUST.description.copy().withStyle { it.withColor(0xF4A460) }
                 )
             )
             add(Component.translatable("item.${CalypsosNightVisionGoggles.ID}.nightvision_goggles.tooltip.expand.2"))
