@@ -48,18 +48,20 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
     )
 
     init {
-        LoaderAdapter.onKeyPressedInScreen(CalypsosNightVisionGogglesKeyBindings.ACCESSORY_MODE) { screen ->
-            if (screen !is AbstractContainerScreen<*>) return@onKeyPressedInScreen
-            val hoveredSlot = (screen as AbstractContainerScreenAccessor).hoveredSlot
-            if (hoveredSlot == null
-                || hoveredSlot is CreativeModeInventoryScreen.CustomCreativeSlot
-                || !hoveredSlot.hasItem()
-                || hoveredSlot.item.item !== this
-            ) return@onKeyPressedInScreen
-            NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot, screen is CreativeModeInventoryScreen)
-            Minecraft.getInstance().soundManager.play(
-                SimpleSoundInstance.forUI(CalypsosNightVisionGogglesSoundEvents.UiModeSwitch, 1f, 1f)
-            )
+        if (LoaderAdapter.isClient) {
+            LoaderAdapter.onKeyPressedInScreen(CalypsosNightVisionGogglesKeyBindings.ACCESSORY_MODE) { screen ->
+                if (screen !is AbstractContainerScreen<*>) return@onKeyPressedInScreen
+                val hoveredSlot = (screen as AbstractContainerScreenAccessor).hoveredSlot
+                if (hoveredSlot == null
+                    || hoveredSlot is CreativeModeInventoryScreen.CustomCreativeSlot
+                    || !hoveredSlot.hasItem()
+                    || hoveredSlot.item.item !== this
+                ) return@onKeyPressedInScreen
+                NightvisionGogglesNetworking.c2sSwitchMode(hoveredSlot, screen is CreativeModeInventoryScreen)
+                Minecraft.getInstance().soundManager.play(
+                    SimpleSoundInstance.forUI(CalypsosNightVisionGogglesSoundEvents.UiModeSwitch, 1f, 1f)
+                )
+            }
         }
 
         LoaderAdapter.onLivingEntityTick { entity ->
