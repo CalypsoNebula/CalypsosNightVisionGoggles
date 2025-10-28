@@ -25,7 +25,7 @@ object PurifierVariant : NightvisionGogglesVariant {
 
     override val model = DefaultedItemGeoModel<NightvisionGogglesItem>(CalypsosNightVisionGogglesKeys.PurifierGoggles)
 
-    private val lastTickForEntity = mutableMapOf<UUID, Int>()
+    private val lastTickForEntity = mutableMapOf<UUID, Long>()
 
     override fun tick(stack: ItemStack, owner: LivingEntity) {
         super.tick(stack, owner)
@@ -36,8 +36,8 @@ object PurifierVariant : NightvisionGogglesVariant {
             return
         }
         val lastTick = lastTickForEntity[owner.uuid]
-        if (lastTick != null && owner.tickCount - lastTick < 60) return
-        lastTickForEntity[owner.uuid] = owner.tickCount
+        if (lastTick != null && owner.level().gameTime - lastTick < 60) return
+        lastTickForEntity[owner.uuid] = owner.level().gameTime
         var result = false
         for (instance in owner.activeEffects.filter { it.effectReference.category === MobEffectCategory.HARMFUL }) {
             if (owner.removeEffect(instance.effectHolder)) result = true
