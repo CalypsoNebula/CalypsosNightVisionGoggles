@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.8] - 2025-10-28
+### :sparkles: New Features
+- [`a413383`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a413383bc51450d32eba6961130c0c62a7ff35ad) - add armor for variants *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`313c194`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/313c19442e84f37e48337d43a08a6b5a5c02b6dc) - purifier isn't working after respawn *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.2.7] - 2025-10-26
 ### :sparkles: New Features
 - [`2902f7d`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/2902f7d0c2489c432469376724ae914e67626930) - use glowing stone dust instead of glowing stone *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -102,3 +110,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.5]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.4...0.2.5
 [0.2.6]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.5...0.2.6
 [0.2.7]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.6...0.2.7
+[0.2.8]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.7...0.2.8
