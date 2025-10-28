@@ -27,7 +27,7 @@ interface NightvisionGogglesVariant {
     val description: List<Component>
         get() = emptyList()
 
-    fun tick(stack: ItemStack, owner: LivingEntity)  {
+    fun tick(stack: ItemStack, owner: LivingEntity) {
         if (stack.mode == null) stack.mode = NightvisionGogglesModeHandler.Mode.AUTO
         if (stack.damageValue >= stack.maxDamage - 1 || !stack.mode!!.isEnabled(stack, owner)) {
             return
@@ -42,7 +42,8 @@ interface NightvisionGogglesVariant {
                 NightvisionPredicate.showIcon!!
             )
         )
-        stack.hurtNoBreak(owner, 1)
+        if (!owner.level().isClientSide)
+            stack.hurtNoBreak(owner, 1)
     }
 
     fun MobEffectInstance?.isFromAccessory(): Boolean = NightvisionPredicate.test(this)
