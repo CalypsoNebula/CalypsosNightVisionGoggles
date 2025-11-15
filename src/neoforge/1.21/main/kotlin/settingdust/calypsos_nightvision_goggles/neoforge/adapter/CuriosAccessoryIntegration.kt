@@ -88,7 +88,7 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
         }
     }
 
-    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? =
         CuriosApi.getCuriosInventory(entity).flatMap {
             it.findFirstCurio {
                 it.itemHolder in items

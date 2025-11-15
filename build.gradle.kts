@@ -64,6 +64,15 @@ repositories {
         }
     }
 
+    exclusiveContent {
+        forRepository {
+            maven("https://cursemaven.com")
+        }
+        filter {
+            includeGroup("curse.maven")
+        }
+    }
+
     maven("https://thedarkcolour.github.io/KotlinForForge/") {
         content {
             includeGroup("thedarkcolour")
@@ -223,6 +232,8 @@ cloche {
 
                 modImplementation(catalog.geckolib.get1().get20().get1().fabric)
                 implementation(catalog.mclib)
+
+                modRuntimeOnly(catalog.jade.get1().get20().get1().fabric)
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
@@ -265,6 +276,8 @@ cloche {
                 modImplementation(catalog.cardinal.components.get1().get21().get1().entity)
 
                 modImplementation(catalog.geckolib.get1().get21().get1().fabric)
+
+                modRuntimeOnly(catalog.jade.get1().get21().get1().fabric)
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
@@ -426,6 +439,8 @@ cloche {
 
                 modImplementation(catalog.geckolib.get1().get20().get1().forge)
                 implementation(catalog.mclib)
+
+                modRuntimeOnly(catalog.jade.get1().get20().get1().forge)
             }
         }
     }
@@ -433,6 +448,7 @@ cloche {
     run neoforge@{
         val neoforge121 = neoforge("neoforge:1.21") {
             minecraftVersion = "1.21.1"
+            loaderVersion = "21.1.215"
 
             metadata {
                 modLoader = "kotlinforforge"
@@ -456,6 +472,10 @@ cloche {
                 modImplementation(catalog.curios.get1().get21().get1().neoforge)
 
                 modImplementation(catalog.geckolib.get1().get21().get1().neoforge)
+
+                modImplementation("curse.maven:bytebuddies-1366195:7174647")
+
+                modRuntimeOnly(catalog.jade.get1().get21().get1().neoforge)
             }
         }
 
@@ -508,8 +528,6 @@ cloche {
         }
 
         targets.withType<NeoforgeTarget> {
-            loaderVersion = "21.1.192"
-
             metadata {
                 modLoader = "kotlinforforge"
                 loaderVersion {
@@ -640,21 +658,32 @@ tasks {
         dependsOn(shadowContainersJar, shadowSourcesJar)
     }
 
-    val remapFabricMinecraftIntermediary by registering {
-        dependsOn(cloche.targets.filterIsInstance<FabricTarget>().flatMap {
-            listOf(
+    for (target in cloche.targets.filterIsInstance<FabricTarget>()) {
+        named(lowerCamelCaseGradleName("accessWiden", target.featureName, "commonMinecraft")) {
+            dependsOn(
                 lowerCamelCaseGradleName(
                     "remap",
-                    it.name,
+                    target.featureName,
                     "commonMinecraft",
                     MinecraftCodevFabricPlugin.INTERMEDIARY_MAPPINGS_NAMESPACE,
                 ), lowerCamelCaseGradleName(
                     "remap",
-                    it.name,
+                    target.featureName,
                     "clientMinecraft",
                     MinecraftCodevFabricPlugin.INTERMEDIARY_MAPPINGS_NAMESPACE,
-                )
+                ), lowerCamelCaseGradleName("generate", target.featureName, "MappingsArtifact")
             )
-        })
+        }
+
+        named(lowerCamelCaseGradleName("accessWiden", target.featureName, "Minecraft")) {
+            dependsOn(
+                lowerCamelCaseGradleName(
+                    "remap",
+                    target.featureName,
+                    "clientMinecraft",
+                    MinecraftCodevFabricPlugin.INTERMEDIARY_MAPPINGS_NAMESPACE,
+                ), lowerCamelCaseGradleName("generate", target.featureName, "MappingsArtifact")
+            )
+        }
     }
 }

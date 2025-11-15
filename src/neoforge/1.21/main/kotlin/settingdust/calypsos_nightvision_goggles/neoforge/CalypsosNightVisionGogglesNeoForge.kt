@@ -41,8 +41,14 @@ object CalypsosNightVisionGogglesNeoForge {
             }
             addListener<RegisterEvent> { event ->
                 when (event.registryKey) {
-                    Registries.ITEM -> CalypsosNightVisionGogglesItems.registerItems { id, value ->
-                        event.register(Registries.ITEM, id) { value }
+                    Registries.ITEM -> {
+                        NeoForgeCalypsosNightVisionGogglesItems.registerItems { id, value ->
+                            event.register(Registries.ITEM, id) { value }
+                        }
+
+                        CalypsosNightVisionGogglesItems.registerItems { id, value ->
+                            event.register(Registries.ITEM, id) { value }
+                        }
                     }
 
                     Registries.SOUND_EVENT -> CalypsosNightVisionGogglesSoundEvents.registerSoundEvents { id, value ->

@@ -18,7 +18,7 @@ import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 
-class AccessoriesAccessoryIntegration : AccessoryIntegration {
+open class AccessoriesAccessoryIntegration : AccessoryIntegration {
     class Renderer : AccessoryRenderer {
         override fun <M : LivingEntity> render(
             stack: ItemStack,
@@ -75,6 +75,6 @@ class AccessoriesAccessoryIntegration : AccessoryIntegration {
         AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles) { Renderer() }
     }
 
-    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? =
         AccessoriesCapability.get(entity)?.getFirstEquipped { it.itemHolder in items }?.stack()
 }

@@ -5,6 +5,7 @@ object CalypsosNightVisionGogglesKeys {
     val TheWatcherGoggles = CalypsosNightVisionGoggles.id("the_watcher_goggles")
     val PurifierGoggles = CalypsosNightVisionGoggles.id("purifier_goggles")
     val NightOwlGoggles = CalypsosNightVisionGoggles.id("night_owl_goggles")
+    val ByteBuddiesGoggles = CalypsosNightVisionGoggles.id("byte_buddies_goggles")
 
     val ItsWatching = CalypsosNightVisionGoggles.id("its_watching")
     val ShadowHopper = CalypsosNightVisionGoggles.id("shadow_hopper")
