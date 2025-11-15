@@ -22,12 +22,13 @@ jobs:
       - uses: burrunan/gradle-cache-action@v3
         name: Execute Gradle build
         with:
-          arguments: remapFabricMinecraftIntermediary build
+          arguments: build
 
-      - name: Update CHANGELOG
+      - name: Get CHANGELOG
         id: changelog
         uses: requarks/changelog-action@v1
         with:
+          writeToFile: false
           token: ${{ github.token }}
           tag: ${{ github.ref_name }}
 
@@ -102,6 +103,12 @@ jobs:
 
           java: |
             17
+
+      - name: Update CHANGELOG
+        uses: requarks/changelog-action@v1
+        with:
+          token: ${{ github.token }}
+          tag: ${{ github.ref_name }}
 
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v6
