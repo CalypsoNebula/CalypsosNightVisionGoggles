@@ -15,6 +15,7 @@ class ItemStackAdapter : ItemStackAdapter {
         amount: Int
     ): Boolean {
         var result = false
+        if (user.level() !is ServerLevel) return false
         hurtAndBreak(1, user.level() as ServerLevel, user as? ServerPlayer) {
             result = true
         }
