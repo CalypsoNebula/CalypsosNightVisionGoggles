@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2025-11-18
+### :sparkles: New Features
+- [`a2b1f7b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a2b1f7bf780743f5b071b47b3486507020136562) - add byte buddies goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`15d44ea`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/15d44ea58063f008ba9cbeb6afd6ead9b46979c8) - add recipe for byte buddies goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`64eb75a`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/64eb75ae3f9467d24a8191b4a9dc81aca25aea43) - byte buddies goggles use wrong model *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`015b821`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/015b8210413cf87357fad56bec568d0a3c3ff907) - crash on client tick *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`0937fa7`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/0937fa7ee2e6bef920cd6b8a6924d18a14fdbd45) - wrong signature for accessory integrations *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.2.9] - 2025-10-28
 ### :bug: Bug Fixes
 - [`60311fe`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/60311fe30196e0e6660b9995547549e4f7eb707f) - avoid crash when hurt on client level *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -117,3 +128,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.7]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.6...0.2.7
 [0.2.8]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.7...0.2.8
 [0.2.9]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.8...0.2.9
+[0.3.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.9...0.3.0
