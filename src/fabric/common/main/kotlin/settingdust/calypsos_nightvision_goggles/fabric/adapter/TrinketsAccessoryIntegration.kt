@@ -72,6 +72,6 @@ class TrinketsAccessoryIntegration : AccessoryIntegration {
         TrinketRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles, Renderer)
     }
 
-    override fun getEquipped(entity: LivingEntity, items: HolderSet<Item>): ItemStack? =
+    override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? =
         TrinketsApi.getTrinketComponent(entity).getOrNull()?.getEquipped { it.itemHolder in items }?.firstOrNull()?.b
 }
