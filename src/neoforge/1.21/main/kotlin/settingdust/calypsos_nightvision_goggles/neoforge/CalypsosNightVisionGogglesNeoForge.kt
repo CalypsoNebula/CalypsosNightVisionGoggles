@@ -8,6 +8,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
 import net.neoforged.neoforge.client.settings.KeyConflictContext
+import net.neoforged.neoforge.event.level.BlockEvent
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
 import net.neoforged.neoforge.registries.RegisterEvent
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
@@ -19,7 +20,9 @@ import settingdust.calypsos_nightvision_goggles.adapter.Entrypoint
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesNetworking
 import settingdust.calypsos_nightvision_goggles.neoforge.item.nightvision_goggles.C2SSwitchModePacket
 import settingdust.calypsos_nightvision_goggles.util.ContainerType
+import settingdust.calypsos_nightvision_goggles.util.event.PlayerBlockBreakCallback
 import settingdust.calypsos_nightvision_goggles.v1_21.CalypsosNightVisionGogglesDataComponents
+import thedarkcolour.kotlinforforge.neoforge.forge.FORGE_BUS
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 
 @Mod(CalypsosNightVisionGoggles.ID)
@@ -42,10 +45,6 @@ object CalypsosNightVisionGogglesNeoForge {
             addListener<RegisterEvent> { event ->
                 when (event.registryKey) {
                     Registries.ITEM -> {
-                        NeoForgeCalypsosNightVisionGogglesItems.registerItems { id, value ->
-                            event.register(Registries.ITEM, id) { value }
-                        }
-
                         CalypsosNightVisionGogglesItems.registerItems { id, value ->
                             event.register(Registries.ITEM, id) { value }
                         }
@@ -64,7 +63,7 @@ object CalypsosNightVisionGogglesNeoForge {
                     }
                 }
             }
-            MOD_BUS.addListener<RegisterPayloadHandlersEvent> { event ->
+            addListener<RegisterPayloadHandlersEvent> { event ->
                 val registrar = event.registrar("1")
                 registrar.playToServer(C2SSwitchModePacket.TYPE, C2SSwitchModePacket.STREAM_CODEC) { packet, context ->
                     NightvisionGogglesNetworking.handleSwitchMode(
@@ -74,6 +73,12 @@ object CalypsosNightVisionGogglesNeoForge {
                         packet.data
                     )
                 }
+            }
+        }
+
+        FORGE_BUS.apply {
+            addListener<BlockEvent.BreakEvent> {
+                PlayerBlockBreakCallback.CALLBACK.invoker.onBreak(it.level, it.player, it.pos, it.state)
             }
         }
     }

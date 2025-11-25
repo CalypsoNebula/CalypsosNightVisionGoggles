@@ -4,9 +4,6 @@
     "calypsos_nightvision_goggles:the_watcher_goggles",
     "calypsos_nightvision_goggles:purifier_goggles",
     "calypsos_nightvision_goggles:night_owl_goggles",
-    {
-      "value": "calypsos_nightvision_goggles:byte_buddies_goggles",
-      "required": false
-    }
+    "calypsos_nightvision_goggles:byte_buddies_goggles"
   ]
 }

@@ -9,6 +9,7 @@ object CalypsosNightVisionGogglesKeys {
 
     val ItsWatching = CalypsosNightVisionGoggles.id("its_watching")
     val ShadowHopper = CalypsosNightVisionGoggles.id("shadow_hopper")
+    val ClockworkFocus = CalypsosNightVisionGoggles.id("clockwork_focus")
 
     val Mode = CalypsosNightVisionGoggles.id("mode")
 

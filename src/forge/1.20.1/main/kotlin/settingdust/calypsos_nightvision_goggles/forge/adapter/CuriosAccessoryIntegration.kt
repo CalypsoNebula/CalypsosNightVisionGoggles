@@ -4,11 +4,11 @@ import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.entity.RenderLayerParent
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
@@ -54,37 +54,10 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
 
     override val modId = CuriosApi.MODID
 
-    override fun init() {
-        CuriosApi.registerCurio(
-            CalypsosNightVisionGogglesItems.NightvisionGoggles,
-            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.NightvisionGoggles)
-        )
-        CuriosApi.registerCurio(
-            CalypsosNightVisionGogglesItems.PurifierGoggles,
-            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.PurifierGoggles)
-        )
-        CuriosApi.registerCurio(
-            CalypsosNightVisionGogglesItems.TheWatcherGoggles,
-            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
-        )
-        CuriosApi.registerCurio(
-            CalypsosNightVisionGogglesItems.NightOwlGoggles,
-            NightVisionGogglesCurio(CalypsosNightVisionGogglesItems.NightOwlGoggles)
-        )
-
+    override fun registerItem(item: Holder<NightvisionGogglesItem>) {
+        CuriosApi.registerCurio(item.value(), NightVisionGogglesCurio(item.value()))
         if (LoaderAdapter.isClient) {
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NightvisionGoggles) {
-                Renderer
-            }
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.PurifierGoggles) {
-                Renderer
-            }
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.TheWatcherGoggles) {
-                Renderer
-            }
-            CuriosRendererRegistry.register(CalypsosNightVisionGogglesItems.NightOwlGoggles) {
-                Renderer
-            }
+            CuriosRendererRegistry.register(item.value()) { Renderer }
         }
     }
 

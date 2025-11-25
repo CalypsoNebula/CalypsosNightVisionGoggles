@@ -11,4 +11,7 @@ class LivingEntityAdapter : LivingEntityAdapter {
 
     override fun LivingEntity.hasEffect(effect: Holder<MobEffect>) =
         hasEffect(effect.value())
+
+    override fun LivingEntity.getEffect(effect: Holder<MobEffect>) =
+        getEffect(effect.value())
 }

@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "calypsos_nightvision_goggles.refmap.json",
   "mixins": [
-    "AbstractContainerScreenAccessor"
+    "AbstractContainerScreenAccessor",
+    "LivingEntityMixin"
   ],
   "client": [
     "ModelPartAccessor"

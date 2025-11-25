@@ -28,6 +28,15 @@ object CalypsosNightVisionGogglesMobEffects {
         )
     }
 
+    val ClockworkFocus by lazy {
+        BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.MOB_EFFECT,
+                CalypsosNightVisionGogglesKeys.ClockworkFocus
+            )
+        )
+    }
+
     fun registerMobEffects(register: (ResourceLocation, MobEffect) -> Unit) {
         register(CalypsosNightVisionGogglesKeys.ItsWatching, ServiceLoaderUtil.findService<ItsWatchingMobEffect>())
         register(CalypsosNightVisionGogglesKeys.ShadowHopper, ServiceLoaderUtil.findService<ShadowHopperMobEffect>())

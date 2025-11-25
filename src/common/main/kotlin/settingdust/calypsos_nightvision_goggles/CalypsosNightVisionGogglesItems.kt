@@ -1,7 +1,9 @@
 package settingdust.calypsos_nightvision_goggles
 
+import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.CreativeModeTabs
@@ -9,6 +11,7 @@ import net.minecraft.world.item.Item
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter.Companion.creativeTab
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.ByteBuddiesVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.NightOwlVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.PurifierVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RegularVariant
@@ -16,10 +19,46 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
 object CalypsosNightVisionGogglesItems {
-    val NightvisionGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NightvisionGoggles) as NightvisionGogglesItem }
-    val TheWatcherGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.TheWatcherGoggles) as NightvisionGogglesItem }
-    val PurifierGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.PurifierGoggles) as NightvisionGogglesItem }
-    val NightOwlGoggles by lazy { BuiltInRegistries.ITEM.get(CalypsosNightVisionGogglesKeys.NightOwlGoggles) as NightvisionGogglesItem }
+    val NightvisionGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.NightvisionGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
+    val TheWatcherGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.TheWatcherGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
+    val PurifierGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.PurifierGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
+    val NightOwlGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.NightOwlGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
+    val ByteBuddiesGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.ByteBuddiesGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
 
     fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         val factory = ServiceLoaderUtil.findService<NightvisionGogglesItem.Factory>()
@@ -33,6 +72,9 @@ object CalypsosNightVisionGogglesItems {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
         register(CalypsosNightVisionGogglesKeys.NightOwlGoggles, factory(NightOwlVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.ByteBuddiesGoggles, factory(ByteBuddiesVariant).also {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
 

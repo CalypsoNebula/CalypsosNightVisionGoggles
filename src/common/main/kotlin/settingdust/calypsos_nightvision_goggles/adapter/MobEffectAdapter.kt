@@ -14,6 +14,7 @@ interface MobEffectAdapter {
     val Speed: Holder<MobEffect>
     val JumpBoost: Holder<MobEffect>
     val Glowing: Holder<MobEffect>
+    val DigSpeed: Holder<MobEffect>
 
     val MobEffectInstance.effectHolder: Holder<MobEffect>
     val MobEffectInstance.effectReference: MobEffect

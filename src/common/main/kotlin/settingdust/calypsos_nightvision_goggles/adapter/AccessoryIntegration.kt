@@ -1,10 +1,13 @@
 package settingdust.calypsos_nightvision_goggles.adapter
 
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
+import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
 interface AccessoryIntegration {
@@ -17,10 +20,12 @@ interface AccessoryIntegration {
         override val modId: String
             get() = throw UnsupportedOperationException()
 
-        override fun init() {
-            for (adapter in services) {
-                adapter.init()
-            }
+        fun init() {
+            registerItem(CalypsosNightVisionGogglesItems.NightvisionGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.PurifierGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.NightOwlGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.ByteBuddiesGoggles)
         }
 
         override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? {
@@ -36,11 +41,17 @@ interface AccessoryIntegration {
             }
             return null
         }
+
+        override fun registerItem(item: Holder<NightvisionGogglesItem>) {
+            for (adapter in services) {
+                adapter.registerItem(item)
+            }
+        }
     }
 
     val modId: String
 
-    fun init()
-
     fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack?
+
+    fun registerItem(item: Holder<NightvisionGogglesItem>)
 }

@@ -9,11 +9,11 @@ import io.wispforest.accessories.api.client.AccessoryRenderer
 import io.wispforest.accessories.api.slot.SlotReference
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.renderer.MultiBufferSource
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderSet
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesItems
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesAccessoryRenderer
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
@@ -51,28 +51,10 @@ open class AccessoriesAccessoryIntegration : AccessoryIntegration {
     }
 
     override val modId = "accessories"
-    override fun init() {
-        AccessoriesAPI.registerAccessory(
-            CalypsosNightVisionGogglesItems.NightvisionGoggles,
-            NightvisionGogglesAccessory(CalypsosNightVisionGogglesItems.NightvisionGoggles)
-        )
-        AccessoriesAPI.registerAccessory(
-            CalypsosNightVisionGogglesItems.TheWatcherGoggles,
-            NightvisionGogglesAccessory(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
-        )
-        AccessoriesAPI.registerAccessory(
-            CalypsosNightVisionGogglesItems.PurifierGoggles,
-            NightvisionGogglesAccessory(CalypsosNightVisionGogglesItems.PurifierGoggles)
-        )
-        AccessoriesAPI.registerAccessory(
-            CalypsosNightVisionGogglesItems.NightOwlGoggles,
-            NightvisionGogglesAccessory(CalypsosNightVisionGogglesItems.NightOwlGoggles)
-        )
 
-        AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightvisionGoggles) { Renderer() }
-        AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.TheWatcherGoggles) { Renderer() }
-        AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.PurifierGoggles) { Renderer() }
-        AccessoriesRendererRegistry.registerRenderer(CalypsosNightVisionGogglesItems.NightOwlGoggles) { Renderer() }
+    override fun registerItem(item: Holder<NightvisionGogglesItem>) {
+        AccessoriesAPI.registerAccessory(item.value(), NightvisionGogglesAccessory(item.value()))
+        AccessoriesRendererRegistry.registerRenderer(item.value()) { Renderer() }
     }
 
     override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? =
