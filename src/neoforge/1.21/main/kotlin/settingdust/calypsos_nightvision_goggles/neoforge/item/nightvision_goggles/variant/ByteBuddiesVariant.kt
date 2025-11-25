@@ -12,6 +12,7 @@ import net.turtleboi.bytebuddies.entity.entities.ByteBuddyEntity
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGoggles
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesKeys
 import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
+import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesModeHandler.Companion.mode
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesVariant
@@ -22,6 +23,7 @@ import thedarkcolour.kotlinforforge.neoforge.forge.FORGE_BUS
 import java.util.*
 
 object ByteBuddiesVariant : NightvisionGogglesVariant {
+    val byteBuddiesExists by lazy { LoaderAdapter.isModLoaded("bytebuddies") }
     val DigSpeedPredicate = MobEffectPredicate(
         MobEffects.DIG_SPEED,
         duration = 60 * 20,
@@ -70,6 +72,7 @@ object ByteBuddiesVariant : NightvisionGogglesVariant {
 
     override fun tick(stack: ItemStack, owner: LivingEntity) {
         super.tick(stack, owner)
+        if (!byteBuddiesExists) return
         val lastTick = lastTickForEntity[owner.uuid]
         if (lastTick != null && owner.level().gameTime - lastTick < 20 * 3) return
         lastTickForEntity[owner.uuid] = owner.level().gameTime
