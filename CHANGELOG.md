@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2025-11-25
+### :sparkles: New Features
+- [`e789b9b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/e789b9be21cc695b8fc8d961872e30f346d01ebf) - add clockwork goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`935fe66`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/935fe6619b07d31e562815e1c5d5c04df727d15b) - avoid reference byte buddies entities when no byte buddies installed *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :recycle: Refactors
+- [`b137796`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/b13779653f0ab12c8fc2e46d2436a59d800ff2ff) - register accessories in common & move byte buddies goggles to common *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.3.0] - 2025-11-18
 ### :sparkles: New Features
 - [`a2b1f7b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a2b1f7bf780743f5b071b47b3486507020136562) - add byte buddies goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -129,3 +140,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.8]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.7...0.2.8
 [0.2.9]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.8...0.2.9
 [0.3.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.9...0.3.0
+[0.4.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.3.0...0.4.0
