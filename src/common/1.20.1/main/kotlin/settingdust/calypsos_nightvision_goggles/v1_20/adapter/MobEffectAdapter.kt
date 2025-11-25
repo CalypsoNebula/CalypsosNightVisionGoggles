@@ -44,10 +44,18 @@ class MobEffectAdapter : MobEffectAdapter {
             ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "jump_boost")
         )
     )
+
     override val Glowing = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
         ResourceKey.create(
             Registries.MOB_EFFECT,
             ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "glowing")
+        )
+    )
+
+    override val DigSpeed: Holder<MobEffect> = BuiltInRegistries.MOB_EFFECT.getHolderOrThrow(
+        ResourceKey.create(
+            Registries.MOB_EFFECT,
+            ResourceLocation(ResourceLocation.DEFAULT_NAMESPACE, "haste")
         )
     )
 

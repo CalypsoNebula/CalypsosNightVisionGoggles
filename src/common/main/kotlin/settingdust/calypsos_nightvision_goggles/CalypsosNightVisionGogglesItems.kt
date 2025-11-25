@@ -12,6 +12,7 @@ import settingdust.calypsos_nightvision_goggles.adapter.AccessoryIntegration
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter.Companion.creativeTab
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.NightvisionGogglesItem
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.ByteBuddiesVariant
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.ClockworkVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.NightOwlVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.PurifierVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RegularVariant
@@ -59,6 +60,14 @@ object CalypsosNightVisionGogglesItems {
             )
         ) as Holder<NightvisionGogglesItem>
     }
+    val ClockworkGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.ClockworkGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
 
     fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         val factory = ServiceLoaderUtil.findService<NightvisionGogglesItem.Factory>()
@@ -75,6 +84,9 @@ object CalypsosNightVisionGogglesItems {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
         register(CalypsosNightVisionGogglesKeys.ByteBuddiesGoggles, factory(ByteBuddiesVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.ClockworkGoggles, factory(ClockworkVariant).also {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
 

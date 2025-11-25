@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:quartz"
+    },
+    "1": {
+      "item": "minecraft:gold_nugget"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "3": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "4": {
+      "item": "minecraft:iron_block"
+    },
+    "5": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "010",
+    "232",
+    "454"
+  ],
+  "result": {
+    "item": "calypsos_nightvision_goggles:byte_buddies_goggles",
+    "count": 1
+  },
+  "show_notification": false
+}
