@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.1] - 2025-11-26
+### :sparkles: New Features
+- [`dbd7abc`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/dbd7abc2c804489e6d66f011db7a9ac281096571) - update clockwork focus icon & add color for translations *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.4.0] - 2025-11-25
 ### :sparkles: New Features
 - [`e789b9b`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/e789b9be21cc695b8fc8d961872e30f346d01ebf) - add clockwork goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -141,3 +146,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.9]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.8...0.2.9
 [0.3.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.9...0.3.0
 [0.4.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.3.0...0.4.0
+[0.4.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.0...0.4.1
