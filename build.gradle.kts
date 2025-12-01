@@ -30,7 +30,7 @@ plugins {
 
     id("com.gradleup.shadow") version "9.0.2"
 
-    id("earth.terrarium.cloche") version "0.13.4"
+    id("earth.terrarium.cloche") version "0.16.6"
 
     id("org.moddedmc.wiki.toolkit") version "0.3.2"
 }
