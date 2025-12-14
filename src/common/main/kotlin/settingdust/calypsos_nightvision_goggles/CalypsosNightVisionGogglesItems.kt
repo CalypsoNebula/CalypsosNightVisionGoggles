@@ -16,6 +16,7 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.NightOwlVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.PurifierVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RegularVariant
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RobotChickenVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.WatcherVariant
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
@@ -68,6 +69,22 @@ object CalypsosNightVisionGogglesItems {
             )
         ) as Holder<NightvisionGogglesItem>
     }
+    val RobotChickenGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.RobotChickenGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
+    val CyberChickenEgg by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.CyberChickenEgg
+            )
+        )
+    }
 
     fun registerItems(register: (ResourceLocation, Item) -> Unit) {
         val factory = ServiceLoaderUtil.findService<NightvisionGogglesItem.Factory>()
@@ -88,6 +105,12 @@ object CalypsosNightVisionGogglesItems {
         })
         register(CalypsosNightVisionGogglesKeys.ClockworkGoggles, factory(ClockworkVariant).also {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.RobotChickenGoggles, factory(RobotChickenVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.CyberChickenEgg, settingdust.calypsos_nightvision_goggles.item.CyberChickenEggItem.Factory().also {
+            it.creativeTab(CreativeModeTabs.FOOD_AND_DRINKS)
         })
 
         AccessoryIntegration.init()

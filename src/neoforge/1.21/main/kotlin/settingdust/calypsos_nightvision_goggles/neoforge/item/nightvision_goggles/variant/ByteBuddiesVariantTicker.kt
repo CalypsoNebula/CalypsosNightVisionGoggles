@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemStack
 import net.turtleboi.bytebuddies.entity.entities.ByteBuddyEntity
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
+import settingdust.calypsos_nightvision_goggles.adapter.MobEffectAdapter
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.ByteBuddiesVariant
 import java.util.*
 
@@ -30,14 +31,7 @@ class ByteBuddiesVariantTicker : ByteBuddiesVariant.Ticker {
 
         for (entity in buddyEntities) {
             entity.addEffect(
-                MobEffectInstance(
-                    ByteBuddiesVariant.DigSpeedPredicate.type,
-                    ByteBuddiesVariant.DigSpeedPredicate.duration!!,
-                    ByteBuddiesVariant.DigSpeedPredicate.amplifier!!,
-                    ByteBuddiesVariant.DigSpeedPredicate.ambient!!,
-                    ByteBuddiesVariant.DigSpeedPredicate.visible!!,
-                    ByteBuddiesVariant.DigSpeedPredicate.showIcon!!
-                )
+                MobEffectInstance(MobEffectAdapter.Speed, 60 * 20, 1, false, false, false)
             )
         }
     }
