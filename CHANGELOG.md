@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2025-12-14
+### :sparkles: New Features
+- [`0375301`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/037530199c844412800d2725ad5f389800a4b2fb) - add Robot Chicken Goggles variant and Cyber Chicken Egg (MODJAM2025) *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`a2f8238`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a2f82386f16901e9b7e1ece1d4c1ff3fa470a371) - bump cloche to fix AW *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.4.1] - 2025-11-26
 ### :sparkles: New Features
 - [`dbd7abc`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/dbd7abc2c804489e6d66f011db7a9ac281096571) - update clockwork focus icon & add color for translations *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -147,3 +155,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.3.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.2.9...0.3.0
 [0.4.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.3.0...0.4.0
 [0.4.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.0...0.4.1
+[0.5.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.1...0.5.0
