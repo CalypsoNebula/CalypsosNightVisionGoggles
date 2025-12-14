@@ -1,11 +1,12 @@
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("UnstableApiUsage", "INVISIBLE_REFERENCE")
 
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import earth.terrarium.cloche.INCLUDE_TRANSFORMED_OUTPUT_ATTRIBUTE
-import earth.terrarium.cloche.api.attributes.CompilationAttributes
+import earth.terrarium.cloche.REMAPPED_ATTRIBUTE
+import earth.terrarium.cloche.api.attributes.MinecraftModLoader
 import earth.terrarium.cloche.api.attributes.TargetAttributes
+import earth.terrarium.cloche.api.metadata.CommonMetadata
 import earth.terrarium.cloche.api.metadata.FabricMetadata
-import earth.terrarium.cloche.api.metadata.ModMetadata
 import earth.terrarium.cloche.api.target.FabricTarget
 import earth.terrarium.cloche.api.target.ForgeLikeTarget
 import earth.terrarium.cloche.api.target.MinecraftTarget
@@ -30,7 +31,7 @@ plugins {
 
     id("com.gradleup.shadow") version "9.0.2"
 
-    id("earth.terrarium.cloche") version "0.13.4"
+    id("earth.terrarium.cloche") version "0.16.26-dust"
 
     id("org.moddedmc.wiki.toolkit") version "0.3.2"
 }
@@ -139,9 +140,19 @@ repositories {
     mavenLocal()
 }
 
+
+
 class MinecraftVersionCompatibilityRule : AttributeCompatibilityRule<String> {
     override fun execute(details: CompatibilityCheckDetails<String>) {
         details.compatible()
+    }
+}
+
+class MinecraftModLoaderCompatibilityRule : AttributeCompatibilityRule<MinecraftModLoader> {
+    override fun execute(details: CompatibilityCheckDetails<MinecraftModLoader>) {
+        if (details.producerValue == MinecraftModLoader.common) {
+            details.compatible()
+        }
     }
 }
 
@@ -149,6 +160,15 @@ dependencies {
     attributesSchema {
         attribute(TargetAttributes.MINECRAFT_VERSION) {
             compatibilityRules.add(MinecraftVersionCompatibilityRule::class)
+        }
+        attribute(TargetAttributes.MOD_LOADER) {
+            compatibilityRules.add(MinecraftModLoaderCompatibilityRule::class)
+        }
+        attribute(TargetAttributes.CLOCHE_MINECRAFT_VERSION) {
+            compatibilityRules.add(MinecraftVersionCompatibilityRule::class)
+        }
+        attribute(TargetAttributes.CLOCHE_MOD_LOADER) {
+            compatibilityRules.add(MinecraftModLoaderCompatibilityRule::class)
         }
     }
 }
@@ -168,7 +188,7 @@ cloche {
 
         dependency {
             modId = "minecraft"
-            required = true
+            type = CommonMetadata.Dependency.Type.Required
             version {
                 start = "1.20.1"
             }
@@ -176,7 +196,7 @@ cloche {
 
         dependency {
             modId = "geckolib"
-            required = true
+            type = CommonMetadata.Dependency.Type.Required
         }
     }
 
@@ -213,7 +233,7 @@ cloche {
             metadata {
                 dependency {
                     modId = "minecraft"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                     version {
                         start = "1.20.1"
                         end = "1.21"
@@ -237,19 +257,7 @@ cloche {
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
-                commonMetadata = objects.newInstance<ModMetadata>().apply {
-                    modId.value("${id}_1_20")
-                    name.value(cloche.metadata.name)
-                    description.value(cloche.metadata.description)
-                    license.value(cloche.metadata.license)
-                    icon.value(cloche.metadata.icon)
-                    sources.value(cloche.metadata.sources)
-                    issues.value(cloche.metadata.issues)
-                    authors.value(cloche.metadata.authors)
-                    contributors.value(cloche.metadata.contributors)
-                    dependencies.value(cloche.metadata.dependencies)
-                    custom.value(cloche.metadata.custom)
-                }
+                modId = "${id}_1_20"
             }
         }
 
@@ -259,7 +267,7 @@ cloche {
             metadata {
                 dependency {
                     modId = "minecraft"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                     version {
                         start = "1.21"
                     }
@@ -281,19 +289,7 @@ cloche {
             }
 
             tasks.named<GenerateFabricModJson>(generateModsManifestTaskName) {
-                commonMetadata = objects.newInstance<ModMetadata>().apply {
-                    modId.value("${id}_1_21")
-                    name.value(cloche.metadata.name)
-                    description.value(cloche.metadata.description)
-                    license.value(cloche.metadata.license)
-                    icon.value(cloche.metadata.icon)
-                    sources.value(cloche.metadata.sources)
-                    issues.value(cloche.metadata.issues)
-                    authors.value(cloche.metadata.authors)
-                    contributors.value(cloche.metadata.contributors)
-                    dependencies.value(cloche.metadata.dependencies)
-                    custom.value(cloche.metadata.custom)
-                }
+                modId = "${id}_1_21"
             }
         }
 
@@ -306,8 +302,9 @@ cloche {
                 isTransitive = false
 
                 attributes {
-                    attribute(INCLUDE_TRANSFORMED_OUTPUT_ATTRIBUTE, true)
-                    attribute(CompilationAttributes.DATA, false)
+                    attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.JAR))
+                    attribute(REMAPPED_ATTRIBUTE, false)
+                    attribute(INCLUDE_TRANSFORMED_OUTPUT_ATTRIBUTE, false)
                 }
             }
             val targets = setOf(fabric1201, fabric121)
@@ -316,7 +313,7 @@ cloche {
                 for (target in targets) {
                     include(project(":")) {
                         capabilities {
-                            requireFeature(target.capabilitySuffix)
+                            requireFeature(target.capabilitySuffix!!)
                         }
                     }
                 }
@@ -325,13 +322,12 @@ cloche {
             tasks {
                 val generateModJson =
                     register<GenerateFabricModJson>(lowerCamelCaseGradleName(featureName, "generateModJson")) {
-                        commonMetadata = objects.newInstance<ModMetadata>().apply {
-                            modId.value(cloche.metadata.modId)
+                        modId = id
+                        metadata = objects.newInstance(FabricMetadata::class.java, fabric1201).apply {
                             license.value(cloche.metadata.license)
                             dependencies.value(cloche.metadata.dependencies)
                         }
-                        targetMetadata = objects.newInstance(FabricMetadata::class.java)
-                        loaderDependencyVersion = "0.16"
+                        loaderDependencyVersion = "0.18"
                         output.set(metadataDirectory.map { it.file("fabric.mod.json") })
                     }
 
@@ -379,12 +375,12 @@ cloche {
 
                 dependency {
                     modId = "fabric-api"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                 }
 
                 dependency {
                     modId = "fabric-language-kotlin"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                 }
 
                 dependency {
@@ -411,7 +407,7 @@ cloche {
 
                 dependency {
                     modId = "minecraft"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                     version {
                         start = "1.20.1"
                         end = "1.21"
@@ -458,7 +454,7 @@ cloche {
 
                 dependency {
                     modId = "minecraft"
-                    required = true
+                    type = CommonMetadata.Dependency.Type.Required
                     version {
                         start = "1.21"
                     }
@@ -486,17 +482,19 @@ cloche {
                 isTransitive = false
 
                 attributes {
-                    attribute(INCLUDE_TRANSFORMED_OUTPUT_ATTRIBUTE, true)
-                    attribute(CompilationAttributes.DATA, false)
+                    attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.JAR))
+                    attribute(REMAPPED_ATTRIBUTE, false)
+                    attribute(INCLUDE_TRANSFORMED_OUTPUT_ATTRIBUTE, false)
                 }
             }
+
             val targets = setOf(neoforge121)
 
             dependencies {
                 for (target in targets) {
                     include(project(":")) {
                         capabilities {
-                            requireFeature(target.capabilitySuffix)
+                            requireFeature(target.capabilitySuffix!!)
                         }
                     }
                 }
