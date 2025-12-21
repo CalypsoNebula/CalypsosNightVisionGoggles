@@ -6,8 +6,7 @@
   "refmap": "calypsos_nightvision_goggles.fabric.refmap.json",
   "mixins": [
     "AbstractContainerMenuMixin",
-    "LivingEntityMixin",
-    "settingdust.calypsos_nightvision_goggles.mixin.LivingEntityMixin"
+    "LivingEntityMixin"
   ],
   "client": [
   ]
