@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2025-12-23
+### :sparkles: New Features
+- [`037b94f`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/037b94f08adc70d4a2b10f7bd483f88e90625cee) - add cute chicken goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`49f9d66`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/49f9d665fd545986ba3608c6af2aff9b8fd0d449) - add vista goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :wrench: Chores
+- [`4c0a043`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/4c0a043a98be030c226d05ddafe2fbc6d0b8e44c) - add missing files *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.5.1] - 2025-12-21
 ### :bug: Bug Fixes
 - [`f6b6cc7`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/f6b6cc7871b1ad51c5c8f5bd05a53e5b4b7120ea) - **fabric**: remove wrong mixin entry *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -162,3 +171,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.4.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.0...0.4.1
 [0.5.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.1...0.5.0
 [0.5.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.0...0.5.1
+[0.6.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.1...0.6.0
