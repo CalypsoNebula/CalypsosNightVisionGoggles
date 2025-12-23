@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:feather"
+    },
+    "1": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "2": {
+      "item": "minecraft:egg"
+    }
+  },
+  "pattern": [
+    " 0 ",
+    "010",
+    " 2 "
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:cute_chicken_goggles"
+  },
+  "show_notification": false
+}

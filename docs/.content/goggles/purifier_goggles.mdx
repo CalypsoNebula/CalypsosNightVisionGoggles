@@ -1,0 +1,99 @@
+---
+title: Purifier Goggles
+id: calypsos_nightvision_goggles:purifier_goggles
+type: item
+---
+
+<Asset location="calypsos_nightvision_goggles:purifier_goggles" width={125} height={125} />
+
+# Purifier Goggles
+
+<Callout variant="info" title="Upgrade Item">
+The Purifier Goggles is an upgraded version of the <ContentLink id="calypsos_nightvision_goggles:nightvision_goggles">Night Vision Goggles</ContentLink>, retaining all base functionality with additional enhancements.
+</Callout>
+
+> "A pure, clean, and healthy future is our directive."
+
+## Overview
+
+The Purifier Goggles provide advanced night vision capabilities combined with automatic debuff removal. These goggles actively protect the wearer by consuming energy to cleanse harmful status effects, making them ideal for combat and exploration in dangerous environments.
+
+## Features
+
+### Base Functionality
+- **Night Vision**: Provides clear vision in complete darkness
+- **Multiple Modes**: `ON / OFF / AUTO` switching
+- **Auto Mode**: Automatically activates below light level 7
+- **Energy Consumption**: 1 energy per second while active
+- **Maximum Charge**: 1800 energy units
+- **Rechargeable**: Uses Spider Eyes, Fermented Spider Eyes, or Glowstone Dust
+- **Versatile Equipment**: Can be worn as helmet or in curios/trinket slot
+
+### Enhanced Features
+- **+2 Armor Protection**: Improved defense compared to base goggles
+- **Automatic Purification**: Removes negative effects automatically
+
+## Purification System
+
+When the Purifier Goggles are active, they automatically detect and remove negative status effects:
+
+<Callout variant="warning">
+Each purification consumes **90 energy** from the goggles. The system has a **3-second cooldown** to prevent excessive energy drain in special situations.
+</Callout>
+
+### How It Works
+- Continuously monitors for harmful effects while active
+- Instantly removes negative effects when detected
+- Energy cost: 90 per purification
+- Cooldown: 3 seconds between purifications
+- Works on all debuffs (Poison, Wither, Weakness, Slowness, etc.)
+
+## Crafting
+
+<PrefabObtaining />
+
+The Purifier Goggles are crafted by upgrading the base <ContentLink id="calypsos_nightvision_goggles:nightvision_goggles">Night Vision Goggles</ContentLink> with additional materials.
+
+## Usage
+
+### Equipping
+- Place in helmet armor slot for protection and purification
+- Alternatively, equip in curios/trinket slot if you have compatible mods installed
+- Right-click while equipped to cycle through modes
+
+### Mode Switching
+- **ON**: Continuously active night vision and automatic purification
+- **OFF**: Completely disabled, conserves energy
+- **AUTO**: Automatically activates in darkness (light level < 7)
+
+### Energy Management
+- Monitor energy level through the HUD display
+- Each purification costs 90 energy
+- Recharge using:
+  - <Asset location="minecraft:spider_eye" width={16} height={16} /> Spider Eyes
+  - <Asset location="minecraft:fermented_spider_eye" width={16} height={16} /> Fermented Spider Eyes
+  - <Asset location="minecraft:glowstone_dust" width={16} height={16} /> Glowstone Dust
+
+## Tips & Strategies
+
+<Callout variant="default" title="Pro Tip">
+Keep the Purifier Goggles well-charged before entering dangerous areas like the Nether or fighting Wither bosses, where debuffs are common.
+</Callout>
+
+- **Nether Exploration**: Essential for surviving Wither Skeleton attacks and exploring dangerous fortresses
+- **Boss Fights**: Automatically removes Wither effect and other boss debuffs
+- **PvP Combat**: Counters poison arrows and splash potions
+- **Cave Diving**: Protects against poison from cave spiders
+- **Energy Conservation**: The 3-second cooldown prevents rapid energy drain from continuous debuff sources
+
+## Data Values
+
+| Property | Value |
+|----------|-------|
+| **Mod ID** | `calypsos_nightvision_goggles` |
+| **Item ID** | `purifier_goggles` |
+| **Armor Value** | 2 |
+| **Energy Capacity** | 1800 |
+| **Energy Consumption** | 1/second (active) + 90/purification |
+| **Purification Cooldown** | 3 seconds |
+| **Auto-activate Threshold** | Light level 7 |

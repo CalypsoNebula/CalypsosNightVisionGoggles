@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:glass"
+    },
+    "1": {
+      "tag": "minecraft:planks"
+    },
+    "2": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "3": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "011",
+    "023",
+    "011"
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:vista_goggles"
+  },
+  "show_notification": false
+}

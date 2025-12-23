@@ -1,0 +1,159 @@
+---
+title: Vista Goggles
+id: calypsos_nightvision_goggles:vista_goggles
+type: item
+---
+
+<Asset location="calypsos_nightvision_goggles:vista_goggles" width={125} height={125} />
+
+# Vista Goggles
+
+<Callout variant="info" title="Crossover Item">
+The Vista Goggles is an upgraded version of the <ContentLink id="calypsos_nightvision_goggles:nightvision_goggles">Night Vision Goggles</ContentLink> with special integration for the Vista mod.
+</Callout>
+
+> "Try Vista! — In memory of MODJAM 2025"
+
+## Overview
+
+The Vista Goggles provide advanced night vision capabilities combined with combat awareness and movement speed enhancement. Taking damage highlights nearby hostile entities, while carrying music discs and cassettes in your inventory grants significant movement speed bonuses and auto-step abilities.
+
+## Features
+
+### Base Functionality
+- **Night Vision**: Provides clear vision in complete darkness
+- **Multiple Modes**: `ON / OFF / AUTO` switching
+- **Auto Mode**: Automatically activates below light level 7
+- **Energy Consumption**: 1 energy per second while active
+- **Maximum Charge**: 1800 energy units
+- **Rechargeable**: Uses Spider Eyes, Fermented Spider Eyes, or Glowstone Dust
+- **Versatile Equipment**: Can be worn as helmet or in curios/trinket slot
+
+### Enhanced Features
+- **+2 Armor Protection**: Improved defense compared to base goggles
+- **Damage Detection**: Highlights hostile entities when you take damage
+- **Music Disc Speed Bonus**: Each unique disc grants 10% movement speed
+- **Cassette Speed Bonus**: Each unique cassette grants 20% movement speed
+- **Auto-Step**: Automatically walk up 1-block high obstacles
+
+## Special Abilities
+
+### Hostile Entity Highlighting
+
+When you take damage while wearing active Vista Goggles:
+
+<Callout variant="warning">
+Taking any damage triggers a 30-block radius scan that highlights all hostile entities with the Glowing effect for 10 seconds.
+</Callout>
+
+- **Trigger**: Taking damage from any source
+- **Range**: 30 block radius
+- **Target**: All MONSTER category entities (zombies, skeletons, creepers, etc.)
+- **Effect**: Glowing effect for 10 seconds
+- **No Cost**: Free activation, no energy consumed
+
+### Movement Speed System
+
+The Vista Goggles provide dynamic movement speed based on your inventory contents:
+
+<Callout variant="default" title="Music Collection Bonus">
+Collect different music discs and Vista cassettes to unlock increasing movement speed bonuses! Each unique item type counts only once.
+</Callout>
+
+#### Music Discs
+- **Per Unique Disc**: +10% movement speed
+- **Example**: 2 different discs = +20% speed
+- **Counts**: All vanilla and modded music discs
+
+#### Cassettes (Vista Mod)
+- **Per Unique Cassette**: +20% movement speed
+- **Example**: 1 cassette = +20% speed
+- **Requires**: Vista mod installed
+- **Optional**: Works without Vista mod installed
+
+#### Combined Bonus
+- Music discs and cassettes stack together
+- **Example**: 2 discs + 1 cassette = 10% + 10% + 20% = +40% total speed
+- Only unique items count (duplicates don't add extra speed)
+
+### Auto-Step Ability
+
+When the Vista Goggles are active, you can automatically walk up 1-block high obstacles:
+
+- **Like a Horse**: Step up full blocks without jumping
+- **Works on**: All 1-block high obstacles (slabs, stairs, full blocks)
+- **Activation**: Automatic when goggles are active
+- **Version-specific**: Uses appropriate Minecraft attribute system
+
+## Crafting
+
+<PrefabObtaining />
+
+The Vista Goggles are crafted by upgrading the base <ContentLink id="calypsos_nightvision_goggles:nightvision_goggles">Night Vision Goggles</ContentLink> with additional materials.
+
+## Usage
+
+### Equipping
+- Place in helmet armor slot for all bonuses
+- Alternatively, equip in curios/trinket slot if you have compatible mods installed
+- Right-click while equipped to cycle through modes
+
+### Mode Switching
+- **ON**: Continuously active night vision, speed bonuses, and auto-step
+- **OFF**: Completely disabled, conserves energy
+- **AUTO**: Automatically activates in darkness (light level < 7)
+
+### Maximizing Speed Bonus
+1. Collect various music discs from dungeons, mansions, and bastions
+2. Optionally obtain Vista cassettes if the mod is installed
+3. Keep unique discs/cassettes in your inventory
+4. Activate the goggles to gain speed based on collection size
+
+### Combat Awareness
+- Wear goggles during combat
+- When damaged, nearby enemies automatically glow
+- Use the 10-second window to assess threats and plan your response
+
+### Energy Management
+- Monitor energy level through the HUD display
+- Speed bonus and highlighting don't consume extra energy
+- Recharge using:
+  - <Asset location="minecraft:spider_eye" width={16} height={16} /> Spider Eyes
+  - <Asset location="minecraft:fermented_spider_eye" width={16} height={16} /> Fermented Spider Eyes
+  - <Asset location="minecraft:glowstone_dust" width={16} height={16} /> Glowstone Dust
+
+## Tips & Strategies
+
+<Callout variant="default" title="Pro Tip">
+Build a music disc collection early! The speed bonuses make exploration, combat, and escaping dangerous situations much easier.
+</Callout>
+
+- **Disc Hunting**: Prioritize finding dungeons and structures for rare music discs
+- **Speed Running**: Use maximum speed bonus for parkour and exploration
+- **Combat Mobility**: High speed helps dodge attacks and kite enemies
+- **Cave Safety**: The damage-triggered highlighting helps detect ambushes
+- **Auto-Step Advantage**: Navigate terrain faster without constant jumping
+- **PvP**: High mobility provides significant combat advantage
+- **Collection Display**: Keep one copy of each disc/cassette in inventory for bonuses
+
+## Compatibility
+
+- **Vista Mod**: Full integration with Vista cassettes for additional speed
+- **Without Vista**: All features work except cassette bonuses
+- **Music Discs**: Compatible with all vanilla and modded music discs
+
+## Data Values
+
+| Property | Value |
+|----------|-------|
+| **Mod ID** | `calypsos_nightvision_goggles` |
+| **Item ID** | `vista_goggles` |
+| **Armor Value** | 2 |
+| **Energy Capacity** | 1800 |
+| **Energy Consumption** | 1/second |
+| **Auto-activate Threshold** | Light level 7 |
+| **Speed per Music Disc** | +10% |
+| **Speed per Cassette** | +20% |
+| **Highlight Range** | 30 blocks |
+| **Highlight Duration** | 10 seconds |
+| **Auto-Step Height** | 1 block |

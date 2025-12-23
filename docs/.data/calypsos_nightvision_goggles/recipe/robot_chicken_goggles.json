@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:redstone_torch"
+    },
+    "1": {
+      "item": "minecraft:red_dye"
+    },
+    "2": {
+      "item": "minecraft:feather"
+    },
+    "3": {
+      "item": "minecraft:iron_block"
+    },
+    "4": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    }
+  },
+  "pattern": [
+    "012",
+    "343",
+    "212"
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:robot_chicken_goggles"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "vista:cassette",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "0": {
+      "item": "minecraft:quartz"
+    },
+    "1": {
+      "item": "minecraft:gold_ingot"
+    },
+    "2": {
+      "item": "calypsos_nightvision_goggles:nightvision_goggles"
+    },
+    "3": {
+      "item": "minecraft:crossbow"
+    }
+  },
+  "pattern": [
+    "010",
+    "121",
+    " 3 "
+  ],
+  "result": {
+    "count": 1,
+    "id": "calypsos_nightvision_goggles:clockwork_goggles"
+  },
+  "show_notification": false
+}
