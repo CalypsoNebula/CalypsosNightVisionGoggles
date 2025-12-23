@@ -1,12 +1,12 @@
 {
-    "required": true,
-    "minVersion": "0.8",
-    "package": "settingdust.calypsos_nightvision_goggles.v1_20.mixin",
-    "compatibilityLevel": "JAVA_17",
-    "refmap": "calypsos_nightvision_goggles.1_20.refmap.json",
-    "mixins": [
-    ],
-    "client": [
-        "GameRendererMixin"
+  "required": true,
+  "minVersion": "0.8",
+  "package": "settingdust.calypsos_nightvision_goggles.v1_20.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "calypsos_nightvision_goggles.1_20.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "GameRendererMixin"
   ]
 }

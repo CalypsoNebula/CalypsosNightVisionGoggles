@@ -6,6 +6,7 @@
   "refmap": "calypsos_nightvision_goggles.refmap.json",
   "mixins": [
     "AbstractContainerScreenAccessor",
+    "ChickenMixin",
     "LivingEntityMixin"
   ],
   "client": [

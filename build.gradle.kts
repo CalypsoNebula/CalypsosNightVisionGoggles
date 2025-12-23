@@ -19,7 +19,6 @@ import net.msrandom.minecraftcodev.fabric.task.JarInJar
 import net.msrandom.minecraftcodev.forge.task.JarJar
 import org.gradle.jvm.tasks.Jar
 
-
 plugins {
     java
     idea
@@ -74,9 +73,9 @@ repositories {
         }
     }
 
-    maven("https://thedarkcolour.github.io/KotlinForForge/") {
+    maven("https://repo.nyon.dev/releases") {
         content {
-            includeGroup("thedarkcolour")
+            includeGroup("dev.nyon")
         }
     }
 
@@ -400,9 +399,9 @@ cloche {
             loaderVersion = "47.4.4"
 
             metadata {
-                modLoader = "kotlinforforge"
+                modLoader = "klf"
                 loaderVersion {
-                    start = "4"
+                    start = "1"
                 }
 
                 dependency {
@@ -428,7 +427,7 @@ cloche {
                 compileOnly(catalog.mixinextras.common)
                 implementation(catalog.mixinextras.forge)
 
-                modImplementation("thedarkcolour:kotlinforforge:4.11.0")
+                modImplementation(catalog.klf.get1().get20().get1().forge)
 
                 modImplementation(catalog.accessories.get1().get20().get1().neoforge)
                 modImplementation(catalog.curios.get1().get20().get1().forge)
@@ -447,9 +446,9 @@ cloche {
             loaderVersion = "21.1.215"
 
             metadata {
-                modLoader = "kotlinforforge"
+                modLoader = "klf"
                 loaderVersion {
-                    start = "5"
+                    start = "1"
                 }
 
                 dependency {
@@ -462,7 +461,7 @@ cloche {
             }
 
             dependencies {
-                modImplementation("thedarkcolour:kotlinforforge-neoforge:5.9.0")
+                modImplementation(catalog.klf.get1().get21().get1().neoforge)
 
                 modImplementation(catalog.accessories.get1().get21().get1().neoforge)
                 modImplementation(catalog.curios.get1().get21().get1().neoforge)

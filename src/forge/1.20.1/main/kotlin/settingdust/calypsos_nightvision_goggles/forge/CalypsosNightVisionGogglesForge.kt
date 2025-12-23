@@ -1,9 +1,11 @@
 package settingdust.calypsos_nightvision_goggles.forge
 
+import dev.nyon.klf.MOD_BUS
 import net.minecraft.client.KeyMapping
 import net.minecraft.core.registries.Registries
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent
 import net.minecraftforge.client.settings.KeyConflictContext
+import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.level.BlockEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -16,8 +18,6 @@ import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesMobEff
 import settingdust.calypsos_nightvision_goggles.CalypsosNightVisionGogglesSoundEvents
 import settingdust.calypsos_nightvision_goggles.adapter.Entrypoint
 import settingdust.calypsos_nightvision_goggles.util.event.PlayerBlockBreakCallback
-import thedarkcolour.kotlinforforge.forge.FORGE_BUS
-import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
 @Mod(CalypsosNightVisionGoggles.ID)
 object CalypsosNightVisionGogglesForge {
@@ -54,7 +54,7 @@ object CalypsosNightVisionGogglesForge {
             }
         }
 
-        FORGE_BUS.apply {
+        MinecraftForge.EVENT_BUS.apply {
             addListener<BlockEvent.BreakEvent> {
                 PlayerBlockBreakCallback.CALLBACK.invoker.onBreak(it.level, it.player, it.pos, it.state)
             }

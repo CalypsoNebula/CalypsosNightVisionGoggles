@@ -288,6 +288,29 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
             )
         )
     )
+
+    val klf = "2.10.6-k2.2.21"
+    maven(
+        id = "klf",
+        group = "dev.nyon",
+        artifact = "KotlinLangForge",
+        mcVersionToVersion = mapOf(
+            "1.20.1" to klf,
+            "1.21.1" to klf
+        ),
+        mapping = listOf(
+            VariantMapping(
+                "1.20.1", mapOf(
+                    "forge" to VariantConfig(versionTransformer = { version, variant -> "$version-2.0+$variant" })
+                ),
+            ),
+            VariantMapping(
+                "1.21.1", mapOf(
+                    "neoforge" to VariantConfig(versionTransformer = { version, variant -> "$version-3.0+$variant" })
+                )
+            )
+        )
+    )
 }
 
 plugins {

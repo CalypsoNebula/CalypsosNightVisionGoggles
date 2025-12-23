@@ -1,6 +1,7 @@
 package settingdust.calypsos_nightvision_goggles.forge.adapter
 
 import com.mojang.blaze3d.platform.InputConstants
+import dev.nyon.klf.MOD_BUS
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.resources.ResourceKey
@@ -21,7 +22,6 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent
 import net.minecraftforge.fml.loading.FMLLoader
 import net.minecraftforge.fml.loading.LoadingModList
 import settingdust.calypsos_nightvision_goggles.adapter.LoaderAdapter
-import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
 class LoaderAdapter : LoaderAdapter {
     override val isClient: Boolean

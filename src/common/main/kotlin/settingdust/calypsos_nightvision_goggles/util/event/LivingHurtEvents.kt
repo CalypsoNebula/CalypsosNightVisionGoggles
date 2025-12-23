@@ -15,7 +15,22 @@ object LivingHurtEvents {
         }
     }
 
+    @JvmField
+    val MODIFY_FALL_DAMAGE = Event<ModifyFallDamage> { listeners ->
+        ModifyFallDamage { entity, source, damage ->
+            var result = damage
+            for (listener in listeners) {
+                result = listener.onFallDamage(entity, source, result)
+            }
+            result
+        }
+    }
+
     fun interface ModifyDamage {
         fun onLivingHurt(entity: LivingEntity, source: DamageSource, originalAmount: Float, amount: Float): Float
+    }
+
+    fun interface ModifyFallDamage {
+        fun onFallDamage(entity: LivingEntity, source: DamageSource, damage: Float): Float
     }
 }
