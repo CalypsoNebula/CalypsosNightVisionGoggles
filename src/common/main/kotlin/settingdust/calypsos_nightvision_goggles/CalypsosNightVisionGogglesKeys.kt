@@ -9,6 +9,7 @@ object CalypsosNightVisionGogglesKeys {
     val ClockworkGoggles = CalypsosNightVisionGoggles.id("clockwork_goggles")
     val RobotChickenGoggles = CalypsosNightVisionGoggles.id("robot_chicken_goggles")
     val CuteChickenGoggles = CalypsosNightVisionGoggles.id("cute_chicken_goggles")
+    val VistaGoggles = CalypsosNightVisionGoggles.id("vista_goggles")
 
     val CyberChickenEgg = CalypsosNightVisionGoggles.id("cyber_chicken_egg")
 

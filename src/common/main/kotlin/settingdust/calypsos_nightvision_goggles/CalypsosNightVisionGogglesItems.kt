@@ -18,6 +18,7 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.PurifierVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RegularVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.RobotChickenVariant
+import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.VistaVariant
 import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.variant.WatcherVariant
 import settingdust.calypsos_nightvision_goggles.util.ServiceLoaderUtil
 
@@ -86,6 +87,14 @@ object CalypsosNightVisionGogglesItems {
             )
         ) as Holder<NightvisionGogglesItem>
     }
+    val VistaGoggles by lazy {
+        BuiltInRegistries.ITEM.getHolderOrThrow(
+            ResourceKey.create(
+                Registries.ITEM,
+                CalypsosNightVisionGogglesKeys.VistaGoggles
+            )
+        ) as Holder<NightvisionGogglesItem>
+    }
     val CyberChickenEgg by lazy {
         BuiltInRegistries.ITEM.getHolderOrThrow(
             ResourceKey.create(
@@ -119,6 +128,9 @@ object CalypsosNightVisionGogglesItems {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
         register(CalypsosNightVisionGogglesKeys.CuteChickenGoggles, factory(CuteChickenVariant).also {
+            it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        })
+        register(CalypsosNightVisionGogglesKeys.VistaGoggles, factory(VistaVariant).also {
             it.creativeTab(CreativeModeTabs.TOOLS_AND_UTILITIES)
         })
         register(CalypsosNightVisionGogglesKeys.CyberChickenEgg, settingdust.calypsos_nightvision_goggles.item.CyberChickenEggItem.Factory().also {
