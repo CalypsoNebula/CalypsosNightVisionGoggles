@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2025-12-24
+### :sparkles: New Features
+- [`15ca78f`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/15ca78f8b9d243813255cf84bf80915734ca1602) - add Vista cassette tapes for 1.21 *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.6.0] - 2025-12-23
 ### :sparkles: New Features
 - [`037b94f`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/037b94f08adc70d4a2b10f7bd483f88e90625cee) - add cute chicken goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -172,3 +177,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.5.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.4.1...0.5.0
 [0.5.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.0...0.5.1
 [0.6.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.1...0.6.0
+[0.7.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.6.0...0.7.0
