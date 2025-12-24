@@ -300,13 +300,48 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
         ),
         mapping = listOf(
             VariantMapping(
-                "1.20.1", mapOf(
+                "1.20.1",
+                mapOf(
                     "forge" to VariantConfig(versionTransformer = { version, variant -> "$version-2.0+$variant" })
                 ),
             ),
             VariantMapping(
                 "1.21.1", mapOf(
                     "neoforge" to VariantConfig(versionTransformer = { version, variant -> "$version-3.0+$variant" })
+                )
+            )
+        )
+    )
+
+    modrinth(
+        id = "vista",
+        artifact = "vista_tv",
+        mcVersionToVersion = mapOf(
+            "1.21" to "1.0.9"
+        ),
+        versionFormat = VersionFormats.mcDashVersion,
+        mapping = listOf(
+            VariantMapping(
+                "1.21", mapOf(
+                    "fabric" to VariantConfig(versionTransformer = VersionTransformers.versionDashLoader),
+                    "neoforge" to VariantConfig(versionTransformer = VersionTransformers.versionDashLoader)
+                )
+            )
+        )
+    )
+
+    maven(
+        id = "moonlight",
+        group = "net.mehvahdjukaar",
+        mcVersionToVersion = mapOf(
+            "1.21" to "2.28.2"
+        ),
+        versionFormat = VersionFormats.mcDashVersion,
+        mapping = listOf(
+            VariantMapping(
+                "1.21", mapOf(
+                    "fabric" to VariantConfig(artifactTransformer = ArtifactTransformers.artifactDashLoader),
+                    "neoforge" to VariantConfig(artifactTransformer = ArtifactTransformers.artifactDashLoader,)
                 )
             )
         )

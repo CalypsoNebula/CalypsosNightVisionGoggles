@@ -35,6 +35,12 @@ class LoaderAdapter : LoaderAdapter {
         }
     }
 
+    override fun addToCreativeTab(key: ResourceKey<CreativeModeTab>, stackSupplier: (CreativeModeTab.ItemDisplayParameters) -> ItemStack) {
+        MOD_BUS.addListener<BuildCreativeModeTabContentsEvent> { event ->
+            if (event.tabKey == key) event.accept(stackSupplier(event.parameters))
+        }
+    }
+
     override fun onKeyPressedInScreen(key: KeyMapping, callback: (screen: Screen) -> Unit) {
         NeoForge.EVENT_BUS.addListener<ScreenEvent.KeyPressed.Post> { event ->
             if (key.isActiveAndMatches(InputConstants.getKey(event.keyCode, event.scanCode))) {

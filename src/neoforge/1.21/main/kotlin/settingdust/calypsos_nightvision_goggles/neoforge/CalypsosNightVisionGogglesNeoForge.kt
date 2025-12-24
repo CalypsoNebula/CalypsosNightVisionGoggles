@@ -23,6 +23,7 @@ import settingdust.calypsos_nightvision_goggles.item.nightvision_goggles.Nightvi
 import settingdust.calypsos_nightvision_goggles.neoforge.item.nightvision_goggles.C2SSwitchModePacket
 import settingdust.calypsos_nightvision_goggles.util.ContainerType
 import settingdust.calypsos_nightvision_goggles.util.event.PlayerBlockBreakCallback
+import settingdust.calypsos_nightvision_goggles.v1_21.CalypsosNightVisionGogglesCassettes
 import settingdust.calypsos_nightvision_goggles.v1_21.CalypsosNightVisionGogglesDataComponents
 
 @Mod(CalypsosNightVisionGoggles.ID)
@@ -46,6 +47,10 @@ object CalypsosNightVisionGogglesNeoForge {
                 when (event.registryKey) {
                     Registries.ITEM -> {
                         CalypsosNightVisionGogglesItems.registerItems { id, value ->
+                            event.register(Registries.ITEM, id) { value }
+                        }
+                        // 注册自定义磁带物品
+                        CalypsosNightVisionGogglesCassettes.registerCassettes { id, value ->
                             event.register(Registries.ITEM, id) { value }
                         }
                     }

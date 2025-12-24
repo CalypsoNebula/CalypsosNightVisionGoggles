@@ -22,6 +22,8 @@ interface LoaderAdapter {
 
     fun <T : Item> T.creativeTab(key: ResourceKey<CreativeModeTab>)
 
+    fun addToCreativeTab(key: ResourceKey<CreativeModeTab>, stackSupplier: (CreativeModeTab.ItemDisplayParameters) -> ItemStack)
+
     fun onKeyPressedInScreen(key: KeyMapping, callback: (screen: Screen) -> Unit)
 
     fun onLivingEntityTick(callback: (entity: LivingEntity) -> Unit)

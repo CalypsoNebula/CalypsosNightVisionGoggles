@@ -4,6 +4,18 @@
     {
       "id": "vista:cassette",
       "required": false
-    }
+    },
+    "calypsos_nightvision_goggles:bytebuddies_collar_cassette",
+    "calypsos_nightvision_goggles:bytebuddies_goggles_cassette",
+    "calypsos_nightvision_goggles:bytebuddies_turtle_cassette",
+    "calypsos_nightvision_goggles:candy_workshop_cassette",
+    "calypsos_nightvision_goggles:chick_goggles_cassette",
+    "calypsos_nightvision_goggles:elara_cassette",
+    "calypsos_nightvision_goggles:furnace_sprite_cassette",
+    "calypsos_nightvision_goggles:haya_time_cassette",
+    "calypsos_nightvision_goggles:mira_cassette",
+    "calypsos_nightvision_goggles:night_vision_goggles_cassette",
+    "calypsos_nightvision_goggles:repo_morehead_cassette",
+    "calypsos_nightvision_goggles:void_pulser_cassette"
   ]
 }

@@ -124,6 +124,12 @@ repositories {
         }
     }
 
+    maven("https://registry.somethingcatchy.net/repository/maven-releases/") {
+        content {
+            includeGroup("net.mehvahdjukaar")
+        }
+    }
+
     mavenCentral()
 
     cloche {
@@ -283,6 +289,9 @@ cloche {
                 modImplementation(catalog.cardinal.components.get1().get21().get1().entity)
 
                 modImplementation(catalog.geckolib.get1().get21().get1().fabric)
+
+                modImplementation(catalog.vista.fabric)
+                modImplementation(catalog.moonlight.fabric)
 
                 modRuntimeOnly(catalog.jade.get1().get21().get1().fabric)
             }
@@ -470,6 +479,9 @@ cloche {
 
                 modImplementation("curse.maven:bytebuddies-1366195:7174647")
 
+                modImplementation(catalog.vista.neoforge)
+                modImplementation(catalog.moonlight.neoforge)
+
                 modRuntimeOnly(catalog.jade.get1().get21().get1().neoforge)
             }
         }
@@ -526,9 +538,9 @@ cloche {
 
         targets.withType<NeoforgeTarget> {
             metadata {
-                modLoader = "kotlinforforge"
+                modLoader = "klf"
                 loaderVersion {
-                    start = "5"
+                    start = "1"
                 }
             }
         }

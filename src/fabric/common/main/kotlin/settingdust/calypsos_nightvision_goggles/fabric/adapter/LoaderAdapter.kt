@@ -30,6 +30,12 @@ class LoaderAdapter : LoaderAdapter {
         ItemGroupEvents.modifyEntriesEvent(key).register { it.accept(this) }
     }
 
+    override fun addToCreativeTab(key: ResourceKey<CreativeModeTab>, stackSupplier: (CreativeModeTab.ItemDisplayParameters) -> ItemStack) {
+        ItemGroupEvents.modifyEntriesEvent(key).register { content ->
+            content.accept(stackSupplier(content.context))
+        }
+    }
+
     override fun onKeyPressedInScreen(keyMapping: KeyMapping, callback: (screen: Screen) -> Unit) {
         ScreenEvents.AFTER_INIT.register { client, screen, scaledWidth, scaledHeight ->
             ScreenKeyboardEvents.afterKeyPress(screen).register { screen, key, scancode, modifiers ->
