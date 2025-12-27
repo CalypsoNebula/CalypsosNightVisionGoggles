@@ -13,16 +13,11 @@ public class ChickenMixin {
         method = "registerGoals",
         at = @At(
             value = "NEW",
-            target = "(Lnet/minecraft/world/entity/PathfinderMob;DLnet/minecraft/world/item/crafting/Ingredient;Z)Lnet/minecraft/world/entity/ai/goal/TemptGoal;"
+            target = "net.minecraft.world.entity.ai.goal.TemptGoal"
         )
     )
     private TemptGoal calypsos_nightvision_goggles$registerGoals$replaceTemptGoal(TemptGoal original) {
-        try {
-            Chicken chicken = (Chicken) (Object) this;
-            return CuteChickenTemptGoalFactory.Companion.create(chicken, original);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return original;
-        }
+        Chicken chicken = (Chicken) (Object) this;
+        return CuteChickenTemptGoalFactory.Companion.create(chicken, original);
     }
 }
