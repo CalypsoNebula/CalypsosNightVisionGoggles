@@ -523,7 +523,6 @@ cloche {
                 val includesJar = register<JarJar>(lowerCamelCaseGradleName(featureName, "includeJar")) {
                     dependsOn(targets.map { it.includeJarTaskName })
 
-                    archiveBaseName = "$id-${featureName.camelToKebabCase()}"
                     archiveClassifier = "neoforge"
                     input = jar.flatMap { it.archiveFile }
                     fromResolutionResults(include)
