@@ -393,6 +393,7 @@ cloche {
 
                 dependency {
                     modId = "trinkets"
+                    type = CommonMetadata.Dependency.Type.Recommended
                 }
             }
 
@@ -550,10 +551,12 @@ cloche {
         metadata {
             dependency {
                 modId = "curios"
+                type = CommonMetadata.Dependency.Type.Recommended
             }
 
             dependency {
                 modId = "accessories"
+                type = CommonMetadata.Dependency.Type.Recommended
             }
         }
     }
