@@ -98,7 +98,7 @@ jobs:
           game-version-filter: releases
 
           dependencies: |
-            kotlin-for-forge
+            kotlinlangforge{modrinth:kotlin-lang-forge}
             geckolib
 
           java: |
