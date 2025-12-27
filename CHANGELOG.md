@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.1] - 2025-12-27
+### :bug: Bug Fixes
+- [`8a09703`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/8a09703d1bc6a1c9cf32ddc2445349aeffc0cc46) - don't require the accessories mods *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`a34c737`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/a34c7377405e40fb5371da0de9e01e1a7566b4cb) - make the new goggles equippable as accessory *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`4c353e0`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/4c353e0f043148a83d5bb63d0c0a8c5e924136df) - add translation for clockwork focus *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`ce50785`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/ce50785d1bddb9c55ef643cad73069c578118b8c) - correct the cute chicken tempt goal *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.7.0] - 2025-12-24
 ### :sparkles: New Features
 - [`15ca78f`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/15ca78f8b9d243813255cf84bf80915734ca1602) - add Vista cassette tapes for 1.21 *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -178,3 +186,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.5.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.0...0.5.1
 [0.6.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.1...0.6.0
 [0.7.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.6.0...0.7.0
+[0.7.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.0...0.7.1
