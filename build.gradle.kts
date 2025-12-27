@@ -436,6 +436,7 @@ cloche {
                 implementation("org.spongepowered:mixin:0.8.7")
                 compileOnly(catalog.mixinextras.common)
                 implementation(catalog.mixinextras.forge)
+                include(catalog.mixinextras.forge)
 
                 modImplementation(catalog.klf.get1().get20().get1().forge)
 
