@@ -48,5 +48,6 @@
   "item.calypsos_nightvision_goggles.nightvision_goggles.tooltip.expand.3": "§7+Consumes 1 durability per second when on, never breaks completely",
   "tooltip.calypsos_nightvision_goggles.expand": "§8Hold §7[Shift] §8to view more information",
   "effect.calypsos_nightvision_goggles.shadow_hopper": "Shadow Hopper",
-  "effect.calypsos_nightvision_goggles.its_watching": "It's Watching!"
+  "effect.calypsos_nightvision_goggles.its_watching": "It's Watching!",
+  "effect.calypsos_nightvision_goggles.clockwork_focus": "Clockwork Focus"
 }
