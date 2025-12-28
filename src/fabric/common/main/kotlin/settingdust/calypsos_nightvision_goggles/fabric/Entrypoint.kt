@@ -33,8 +33,10 @@ object Entrypoint {
         }
         Entrypoint.init()
     }
+}
 
-    fun clientInit() {
+object ClientEntrypoint {
+    fun init() {
         CalypsosNightVisionGogglesKeyBindings.registerKeyBindings {
             KeyBindingHelper.registerKeyBinding(it)
         }
