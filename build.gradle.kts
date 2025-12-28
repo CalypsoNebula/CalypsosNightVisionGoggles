@@ -26,7 +26,7 @@ plugins {
     kotlin("jvm") version "2.1.10"
     kotlin("plugin.serialization") version "2.1.10"
 
-    id("com.palantir.git-version") version "3.1.0"
+    id("com.palantir.git-version") version "4.1.0"
 
     id("com.gradleup.shadow") version "9.0.2"
 
