@@ -1,10 +1,15 @@
 {
+  "credit": "Made with Blockbench",
   "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
   "display": {
     "thirdperson_righthand": {
       "translation": [
         0,
-        -1.5,
+        -1,
         2.25
       ],
       "scale": [
@@ -16,7 +21,7 @@
     "thirdperson_lefthand": {
       "translation": [
         0,
-        -1.5,
+        -1,
         2.25
       ],
       "scale": [
@@ -26,92 +31,63 @@
       ]
     },
     "firstperson_righthand": {
-      "translation": [
-        1,
-        -2.75,
+      "rotation": [
+        0,
+        126,
         0
       ],
-      "scale": [
-        0.75,
-        0.75,
-        0.75
-      ]
-    },
-    "firstperson_lefthand": {
       "translation": [
+        0,
         1,
-        -1.75,
-        0
-      ]
-    },
-    "ground": {
+        0.75
+      ],
       "scale": [
         0.5,
         0.5,
         0.5
       ]
     },
-    "gui": {
+    "firstperson_lefthand": {
       "rotation": [
-        -160,
-        45,
-        -180
-      ],
-      "translation": [
-        0.25,
-        -3,
+        0,
+        126,
         0
       ],
+      "translation": [
+        0,
+        1,
+        0.75
+      ],
       "scale": [
-        0.6,
-        0.6,
-        0.6
+        0.5,
+        0.5,
+        0.5
       ]
     },
     "head": {
       "translation": [
         0,
-        -8.25,
-        0
-      ],
-      "scale": [
-        1.61,
-        1.61,
-        1.61
-      ]
-    },
-    "fixed": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        -6.5,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ]
-    },
-    "on_shelf": {
-      "rotation": [
-        60,
-        180,
-        0
-      ],
-      "translation": [
-        0.25,
-        -5,
-        3.25
+        -4.75,
+        0.25
       ],
       "scale": [
         1.5,
         1.5,
         1.5
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -6,
+        0
+      ]
+    },
+    "on_shelf": {
+      "rotation": [
+        0,
+        180,
+        0
       ]
     }
   }

@@ -574,6 +574,11 @@ cloche {
                 jvmVersion = minecraftVersion.map { mcVersionToJavaVersion[it]!!.majorVersion.toInt() }
                 jvmArguments("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true")
             }
+
+            server {
+                jvmVersion = minecraftVersion.map { mcVersionToJavaVersion[it]!!.majorVersion.toInt() }
+                jvmArguments("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true")
+            }
         }
 
         mappings {
