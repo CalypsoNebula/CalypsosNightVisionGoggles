@@ -23,13 +23,14 @@ class NightvisionGogglesNetworking : NightvisionGogglesNetworking {
             } else {
                 slot.index
             }
-        val type = if (slot is CreativeTrinketSlot) {
+        val isCreativeTrinket = slot.javaClass.name == "dev.emi.trinkets.CreativeTrinketSlot"
+        val type = if (isCreativeTrinket) {
             TrinketsContainerType.TRINKET_TYPE
         } else {
             ContainerType.NORMAL
         }
-        val data = if (slot is CreativeTrinketSlot) {
-            TrinketsContainerType.Trinket(slot.type.group, slot.type.name)
+        val data = if (isCreativeTrinket) {
+            TrinketsContainerType.Trinket((slot as CreativeTrinketSlot).type.group, slot.type.name)
         } else {
             ContainerType.Data.Normal
         }
