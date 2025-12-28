@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.2] - 2025-12-28
+### :bug: Bug Fixes
+- [`4836623`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/483662357522ee86da75f658beb0994361b7ea75) - avoid crashing when no mixin extras on forge 1.20.1 *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`4019eda`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/4019edaa4f7c52311c638c3afecc54de47e7e007) - crash when no trinkets on fabric *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :wrench: Chores
+- [`aaafd39`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/aaafd39b2d5fa9f48aec2258b93048cadad4601d) - adjust the render offset for goggles *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.7.1] - 2025-12-27
 ### :bug: Bug Fixes
 - [`8a09703`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/8a09703d1bc6a1c9cf32ddc2445349aeffc0cc46) - don't require the accessories mods *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -187,3 +196,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.6.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.5.1...0.6.0
 [0.7.0]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.6.0...0.7.0
 [0.7.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.0...0.7.1
+[0.7.2]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.1...0.7.2
