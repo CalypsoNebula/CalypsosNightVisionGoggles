@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.4] - 2025-12-30
+### :bug: Bug Fixes
+- [`804ee89`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/804ee8998ed03b8422ff855176b4d06e5bf570a5) - render the new goggles as accessories *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.7.3] - 2025-12-28
 ### :bug: Bug Fixes
 - [`300a3a7`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/300a3a74d94fb87b9f70065b2eede9932acad855) - avoid crash on server *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -203,3 +208,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.7.1]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.0...0.7.1
 [0.7.2]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.1...0.7.2
 [0.7.3]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.2...0.7.3
+[0.7.4]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.3...0.7.4
