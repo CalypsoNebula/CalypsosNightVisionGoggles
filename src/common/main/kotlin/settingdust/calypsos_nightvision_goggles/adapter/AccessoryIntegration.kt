@@ -26,6 +26,10 @@ interface AccessoryIntegration {
             registerItem(CalypsosNightVisionGogglesItems.TheWatcherGoggles)
             registerItem(CalypsosNightVisionGogglesItems.NightOwlGoggles)
             registerItem(CalypsosNightVisionGogglesItems.ByteBuddiesGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.ClockworkGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.RobotChickenGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.CuteChickenGoggles)
+            registerItem(CalypsosNightVisionGogglesItems.VistaGoggles)
         }
 
         override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? {
