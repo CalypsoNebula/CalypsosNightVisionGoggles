@@ -44,6 +44,14 @@ class TrinketsAccessoryIntegration : AccessoryIntegration {
         override fun tick(stack: ItemStack, slot: SlotReference, entity: LivingEntity) {
             item.variant.tick(stack, entity)
         }
+
+        override fun onEquip(stack: ItemStack, slot: SlotReference, entity: LivingEntity) {
+            item.variant.onEquipped(stack, entity)
+        }
+
+        override fun onUnequip(stack: ItemStack, slot: SlotReference, entity: LivingEntity) {
+            item.variant.onUnequipped(stack, entity)
+        }
     }
 
     override val modId = TrinketsMain.MOD_ID

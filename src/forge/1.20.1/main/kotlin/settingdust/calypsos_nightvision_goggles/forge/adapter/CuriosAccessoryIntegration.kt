@@ -50,6 +50,14 @@ class CuriosAccessoryIntegration : AccessoryIntegration {
         override fun curioTick(slotContext: SlotContext, stack: ItemStack) {
             item.variant.tick(stack, slotContext.entity())
         }
+
+        override fun onEquip(slotContext: SlotContext, prevStack: ItemStack, stack: ItemStack) {
+            item.variant.onEquipped(stack, slotContext.entity())
+        }
+
+        override fun onUnequip(slotContext: SlotContext, newStack: ItemStack, stack: ItemStack) {
+            item.variant.onUnequipped(stack, slotContext.entity())
+        }
     }
 
     override val modId = CuriosApi.MODID

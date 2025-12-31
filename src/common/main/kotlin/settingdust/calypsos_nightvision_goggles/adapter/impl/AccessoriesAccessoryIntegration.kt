@@ -48,6 +48,14 @@ open class AccessoriesAccessoryIntegration : AccessoryIntegration {
         override fun tick(stack: ItemStack, slot: SlotReference) {
             item.variant.tick(stack, slot.entity())
         }
+
+        override fun onEquip(stack: ItemStack, slot: SlotReference) {
+            item.variant.onEquipped(stack, slot.entity())
+        }
+
+        override fun onUnequip(stack: ItemStack, slot: SlotReference) {
+            item.variant.onUnequipped(stack, slot.entity())
+        }
     }
 
     override val modId = "accessories"
