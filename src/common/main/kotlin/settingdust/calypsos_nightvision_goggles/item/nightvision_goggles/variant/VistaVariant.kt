@@ -137,6 +137,12 @@ object VistaVariant : NightvisionGogglesVariant {
         SpeedModifierHandler.updateStepHeight(owner, mode.isEnabled(stack, owner))
     }
 
+    override fun onUnequipped(stack: ItemStack, entity: LivingEntity) {
+        // 移除速度加成和台阶高度加成
+        SpeedModifierHandler.removeSpeedModifier(entity)
+        SpeedModifierHandler.updateStepHeight(entity, false)
+    }
+
     /**
      * 版本特定的速度修饰符处理器
      */
