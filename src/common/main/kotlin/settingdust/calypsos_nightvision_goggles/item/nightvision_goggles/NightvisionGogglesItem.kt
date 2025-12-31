@@ -70,6 +70,21 @@ abstract class NightvisionGogglesItem(val variant: NightvisionGogglesVariant) :
             variant.tick(stack, entity)
         }
 
+        LoaderAdapter.onEquipmentChanged { entity, slot, from, to ->
+            // 检测头盔槽位的护目镜装备变化
+            if (slot != EquipmentSlot.HEAD) return@onEquipmentChanged
+            
+            // 护目镜被卸下
+            if (from.`is`(this) && !to.`is`(this)) {
+                variant.onUnequipped(from, entity)
+            }
+            
+            // 护目镜被装备
+            if (!from.`is`(this) && to.`is`(this)) {
+                variant.onEquipped(to, entity)
+            }
+        }
+
         LoaderAdapter.onItemStackedOnOther { _, carriedItem, stackedOnItem, slot, clickAction ->
             if (clickAction !== ClickAction.SECONDARY) return@onItemStackedOnOther false
             if (!carriedItem.`is`(this)) return@onItemStackedOnOther false
