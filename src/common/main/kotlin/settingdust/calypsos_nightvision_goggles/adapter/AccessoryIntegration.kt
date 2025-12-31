@@ -33,12 +33,6 @@ interface AccessoryIntegration {
         }
 
         override fun getEquipped(entity: LivingEntity, items: HolderSet<out Item>): ItemStack? {
-            for (slot in EquipmentSlot.entries) {
-                val stack = entity.getItemBySlot(slot)
-                if (stack.itemHolder in items) {
-                    return stack
-                }
-            }
             for (adapter in services) {
                 val equipped = adapter.getEquipped(entity, items)
                 if (equipped != null) return equipped
