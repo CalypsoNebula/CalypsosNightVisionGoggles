@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.5] - 2025-12-31
+### :sparkles: New Features
+- [`861c610`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/861c61080199be23a22f9f62f1e210dd603117f9) - add onEquipped and onUnequipped callbacks to variant interface *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`944486e`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/944486e6d0373d7ab22debe379bb053baf74cce9) - detect equipment changes and trigger variant callbacks *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`89da04c`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/89da04c94d8daf336c927b5e81eaa90e75202948) - implement onEquip and onUnequip in accessory integrations *(commit by [@SettingDust](https://github.com/SettingDust))*
+- [`353788e`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/353788e6d976bf377ed8aa9b0c69533cfd585674) - apply speed bonus immediately on Vista goggles equip *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :bug: Bug Fixes
+- [`5ffa9d2`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/5ffa9d25fe40f6862c18e689fb891ac0420572fa) - remove speed bonus when Vista goggles are unequipped *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :recycle: Refactors
+- [`35f58cc`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/35f58cc6f2086cd0da3ff045e6c89a929d3a57e2) - extract equipment slot logic to dedicated integration *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+### :wrench: Chores
+- [`962efd8`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/962efd8518ee5e1cf2d95af18a89ca2a2dd09aea) - update goggles model files *(commit by [@SettingDust](https://github.com/SettingDust))*
+
+
 ## [0.7.4] - 2025-12-30
 ### :bug: Bug Fixes
 - [`804ee89`](https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/commit/804ee8998ed03b8422ff855176b4d06e5bf570a5) - render the new goggles as accessories *(commit by [@SettingDust](https://github.com/SettingDust))*
@@ -209,3 +226,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.7.2]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.1...0.7.2
 [0.7.3]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.2...0.7.3
 [0.7.4]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.3...0.7.4
+[0.7.5]: https://github.com/CalypsoNebula/CalypsosNightVisionGoggles/compare/0.7.4...0.7.5
