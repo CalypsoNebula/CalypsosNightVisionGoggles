@@ -27,6 +27,14 @@ interface NightvisionGogglesVariant {
     val description: List<Component>
         get() = emptyList()
 
+    fun onEquipped(stack: ItemStack, entity: LivingEntity) {
+        // 默认空实现，子类可以重写
+    }
+
+    fun onUnequipped(stack: ItemStack, entity: LivingEntity) {
+        // 默认空实现，子类可以重写
+    }
+
     fun tick(stack: ItemStack, owner: LivingEntity) {
         if (stack.mode == null) stack.mode = NightvisionGogglesModeHandler.Mode.AUTO
         if (stack.damageValue >= stack.maxDamage - 1 || !stack.mode!!.isEnabled(stack, owner)) {
