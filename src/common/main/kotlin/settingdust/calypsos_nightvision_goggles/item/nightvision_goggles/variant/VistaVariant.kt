@@ -90,6 +90,11 @@ object VistaVariant : NightvisionGogglesVariant {
         }
     }
 
+    override fun onEquipped(stack: ItemStack, entity: LivingEntity) {
+        // 装备时计算并添加速度加成
+        updateSpeedBonus(stack, entity)
+    }
+
     override fun tick(stack: ItemStack, owner: LivingEntity) {
         super.tick(stack, owner)
 
@@ -97,6 +102,16 @@ object VistaVariant : NightvisionGogglesVariant {
         if (stack.damageValue >= stack.maxDamage - 1 || !mode.isEnabled(stack, owner)) {
             // 移除速度修饰符
             SpeedModifierHandler.removeSpeedModifier(owner)
+            return
+        }
+
+        // 每tick更新速度加成（因为背包中的唱片/磁带可能变化）
+        updateSpeedBonus(stack, owner)
+    }
+
+    private fun updateSpeedBonus(stack: ItemStack, owner: LivingEntity) {
+        val mode = stack.mode ?: return
+        if (stack.damageValue >= stack.maxDamage - 1 || !mode.isEnabled(stack, owner)) {
             return
         }
 
